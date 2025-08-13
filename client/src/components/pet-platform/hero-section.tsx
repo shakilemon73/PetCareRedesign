@@ -51,17 +51,17 @@ export default function PetHeroSection() {
                 </p>
               </div>
 
-              {/* Social Proof Line */}
-              <div className="flex items-center gap-4 text-muted-foreground">
+              {/* Susan Weinschenk - Social Proof & Recognition */}
+              <div className="flex items-center gap-4 text-muted-foreground social-proof-subtle">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-success-500 border-2 border-white dark:border-background" />
+                    <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-success-500 border-2 border-white dark:border-background shadow-medium" />
                   ))}
                 </div>
-                <span className="text-sm font-medium">
-                  <span className="text-primary-600 font-bold">50,000+</span> pet parents trust us
+                <span className="text-sm font-medium recognition-over-recall">
+                  <span className="text-primary-600 font-bold trust-building">50,000+</span> pet parents trust us
                 </span>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 recognition-over-recall">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
@@ -70,12 +70,12 @@ export default function PetHeroSection() {
               </div>
             </div>
 
-            {/* Enhanced CTA Section */}
-            <div className="space-y-6">
+            {/* Luke Wroblewski - Touch Targets & Alan Cooper - Goal-Oriented */}
+            <div className="space-y-6 goal-focused">
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
                   data-testid="button-start-free-trial"
-                  className="btn-primary group text-lg sm:text-xl px-8 py-5 sm:px-12 sm:py-6 hover-glow shadow-strong will-change-transform"
+                  className="btn-primary group text-lg sm:text-xl px-8 py-5 sm:px-12 sm:py-6 hover-glow shadow-strong touch-friendly clickable feedback-immediate"
                 >
                   <Rocket className="w-6 h-6 group-hover:rotate-12 transition-all duration-300" />
                   <span className="font-bold">Start Free Trial</span>
@@ -83,34 +83,34 @@ export default function PetHeroSection() {
                 </button>
                 <button 
                   data-testid="button-chat-dr-paw"
-                  className="btn-secondary group text-lg sm:text-xl px-8 py-5 sm:px-12 sm:py-6 will-change-transform"
+                  className="btn-secondary group text-lg sm:text-xl px-8 py-5 sm:px-12 sm:py-6 touch-friendly clickable feedback-immediate"
                 >
                   <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-all duration-300" />
                   <span className="font-bold">Chat with Dr. Paw</span>
                 </button>
               </div>
               
-              {/* Enhanced Trust Indicators */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="flex items-center gap-3 glass p-4 rounded-xl">
+              {/* Don Norman - Constraints & Alan Cooper - Error Prevention */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 grid-16px">
+                <div className="flex items-center gap-3 glass p-4 rounded-xl clean-edges touch-friendly recognition-over-recall">
                   <Check className="w-6 h-6 text-success-600 fill-current flex-shrink-0" />
-                  <div>
-                    <span className="font-bold text-foreground block">No card required</span>
-                    <span className="text-sm text-muted-foreground">Start instantly</span>
+                  <div className="memory-friendly">
+                    <span className="font-bold text-foreground block aesthetic-minimal">No card required</span>
+                    <span className="text-sm text-muted-foreground understandable-clear">Start instantly</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 glass p-4 rounded-xl">
+                <div className="flex items-center gap-3 glass p-4 rounded-xl clean-edges touch-friendly recognition-over-recall">
                   <Clock className="w-6 h-6 text-primary-600 flex-shrink-0" />
-                  <div>
-                    <span className="font-bold text-foreground block">2-min setup</span>
-                    <span className="text-sm text-muted-foreground">Cancel anytime</span>
+                  <div className="memory-friendly">
+                    <span className="font-bold text-foreground block aesthetic-minimal">2-min setup</span>
+                    <span className="text-sm text-muted-foreground understandable-clear">Cancel anytime</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 glass p-4 rounded-xl">
+                <div className="flex items-center gap-3 glass p-4 rounded-xl clean-edges touch-friendly recognition-over-recall">
                   <Shield className="w-6 h-6 text-success-600 flex-shrink-0" />
-                  <div>
-                    <span className="font-bold text-foreground block">HIPAA secure</span>
-                    <span className="text-sm text-muted-foreground">Your data protected</span>
+                  <div className="memory-friendly">
+                    <span className="font-bold text-foreground block aesthetic-minimal">HIPAA secure</span>
+                    <span className="text-sm text-muted-foreground understandable-clear">Your data protected</span>
                   </div>
                 </div>
               </div>

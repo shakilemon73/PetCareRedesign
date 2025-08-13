@@ -6,11 +6,12 @@ export default function PlatformToggle() {
 
   return (
     <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in will-change-transform">
-      <div className="glass-card p-3 shadow-strong backdrop-blur-xl">
-        <div className="relative flex items-center rounded-2xl p-1">
-          {/* Enhanced Sliding Background with Gradient */}
+      {/* Julie Zhuo - Systems Thinking & Jonathan Ive - Simplicity */}
+      <div className="glass-card p-3 shadow-strong backdrop-blur-xl clean-edges">
+        <div className="relative flex items-center rounded-2xl p-1 systematic-spacing">
+          {/* Don Norman - Clear Feedback & Aarron Walter - Emotional Design */}
           <div 
-            className={`absolute top-1 bottom-1 w-1/2 rounded-xl shadow-strong transition-all duration-500 ease-out will-change-transform ${
+            className={`absolute top-1 bottom-1 w-1/2 rounded-xl shadow-strong feedback-gentle will-change-transform ${
               currentPlatform === 'pet' ? 'left-1' : 'left-1/2'
             }`}
             style={{
@@ -23,40 +24,44 @@ export default function PlatformToggle() {
             }}
           />
           
-          {/* Enhanced Buttons */}
+          {/* Luke Wroblewski - Touch Targets & Alan Cooper - Goal Oriented */}
           <button
             data-testid="button-pet-platform"
             onClick={() => setPlatform('pet')}
-            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold transition-all duration-300 hover:scale-105 will-change-transform ${
+            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold clickable feedback-immediate touch-friendly recognition-over-recall ${
               currentPlatform === 'pet'
                 ? 'text-white'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             <Heart className={`w-5 h-5 transition-all duration-300 ${
-              currentPlatform === 'pet' ? 'fill-current scale-110' : ''
+              currentPlatform === 'pet' ? 'fill-current scale-110 personality-warm' : ''
             }`} />
-            <span>Pet Parents</span>
+            {/* Steve Krug - Scannable labels */}
+            <span className="aesthetic-minimal">Pet Parents</span>
+            {/* Aarron Walter - Delight signifier */}
             {currentPlatform === 'pet' && (
-              <Sparkles className="w-4 h-4 animate-pulse-slow text-white/80" />
+              <Sparkles className="w-4 h-4 animate-pulse-slow text-white/80 delight-bounce" />
             )}
           </button>
           
           <button
             data-testid="button-vet-platform"
             onClick={() => setPlatform('vet')}
-            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold transition-all duration-300 hover:scale-105 will-change-transform ${
+            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold clickable feedback-immediate touch-friendly recognition-over-recall ${
               currentPlatform === 'vet'
                 ? 'text-white'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             <Stethoscope className={`w-5 h-5 transition-all duration-300 ${
-              currentPlatform === 'vet' ? 'scale-110' : ''
+              currentPlatform === 'vet' ? 'scale-110 trust-building' : ''
             }`} />
-            <span>Veterinarians</span>
+            {/* Steve Krug - Scannable labels */}
+            <span className="aesthetic-minimal">Veterinarians</span>
+            {/* Aarron Walter - Delight signifier */}
             {currentPlatform === 'vet' && (
-              <Sparkles className="w-4 h-4 animate-pulse-slow text-white/80" />
+              <Sparkles className="w-4 h-4 animate-pulse-slow text-white/80 delight-bounce" />
             )}
           </button>
         </div>
