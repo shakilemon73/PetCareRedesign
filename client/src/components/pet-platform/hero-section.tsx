@@ -1,76 +1,118 @@
-import { Rocket, MessageCircle, Check, Shield, Heart, Star, Zap, ArrowRight, Sparkles } from "lucide-react";
+import { Rocket, MessageCircle, Check, Shield, Heart, Star, Zap, ArrowRight, Sparkles, Award, Users, Clock } from "lucide-react";
 
 export default function PetHeroSection() {
   return (
-    <section className="relative gradient-hero dark:gradient-hero-dark min-h-screen flex items-center overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl floating" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-success-500/10 rounded-full blur-3xl floating-delayed" />
+    <section className="relative gradient-hero min-h-screen flex items-center overflow-hidden">
+      {/* Advanced Background Elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl floating will-change-transform" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-success-500/10 rounded-full blur-3xl floating-delayed will-change-transform" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-500/5 to-success-500/5 rounded-full blur-3xl" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content Section */}
-          <div className="space-y-8 animate-fade-in">
-            {/* Status Badge */}
-            <div className="inline-flex items-center glass rounded-full px-6 py-3 shadow-medium">
-              <div className="relative flex items-center">
-                <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse-slow mr-3" />
-                <span className="text-sm font-semibold text-foreground mr-2">24/7 AI Support Available</span>
-                <Sparkles className="w-4 h-4 text-primary-500 animate-pulse-slow" />
+      <div className="container-custom relative z-10 pt-32 pb-20">
+        <div className="grid-responsive">
+          {/* Content Section - Enhanced Typography & Hierarchy */}
+          <div className="space-y-10 animate-fade-in will-change-opacity">
+            {/* Premium Status Badge */}
+            <div className="inline-flex items-center glass-card px-6 py-4 shadow-strong animate-scale-in">
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  <div className="w-3 h-3 bg-success-500 rounded-full animate-pulse-slow" />
+                  <div className="absolute inset-0 w-3 h-3 bg-success-500 rounded-full animate-ping" />
+                </div>
+                <span className="text-sm font-semibold text-foreground">24/7 AI Veterinary Support</span>
+                <div className="flex items-center gap-1 ml-2">
+                  <Sparkles className="w-4 h-4 text-primary-500 animate-pulse-slow" />
+                  <span className="text-xs font-medium text-success-600 bg-success-50 dark:bg-success-100 px-2 py-1 rounded-full">LIVE</span>
+                </div>
               </div>
             </div>
 
-            {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-6xl lg:text-7xl font-bold text-foreground leading-[0.9] font-display">
-                Pet Care Without the{" "}
-                <span className="gradient-text relative">
-                  Stress
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-success-500 rounded-full opacity-60" />
+            {/* Revolutionary Headline with Better Typography */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[0.85] tracking-tight">
+                  Pet Care Without the{" "}
+                  <span className="relative inline-block">
+                    <span className="gradient-text">Stress</span>
+                    <div className="absolute -bottom-3 left-0 right-0 h-2 bg-gradient-to-r from-primary-500 via-purple-500 to-success-500 rounded-full opacity-70 blur-sm" />
+                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-purple-500 to-success-500 rounded-full" />
+                  </span>
+                </h1>
+                
+                <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-3xl font-medium">
+                  Revolutionary <span className="text-primary-600 font-bold relative">AI-powered veterinary care<span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" /></span> with{" "}
+                  <span className="text-success-600 font-bold relative">instant appointments<span className="absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" /></span>{" "}
+                  and savings up to{" "}
+                  <span className="text-2xl sm:text-3xl font-black text-success-600 relative">
+                    80%
+                    <div className="absolute -top-1 -right-1 text-xs font-bold text-success-500 animate-pulse-slow">OFF</div>
+                  </span>
+                </p>
+              </div>
+
+              {/* Social Proof Line */}
+              <div className="flex items-center gap-4 text-muted-foreground">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-success-500 border-2 border-white dark:border-background" />
+                  ))}
+                </div>
+                <span className="text-sm font-medium">
+                  <span className="text-primary-600 font-bold">50,000+</span> pet parents trust us
                 </span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                Revolutionary AI-powered veterinary care with{" "}
-                <span className="text-primary-600 font-semibold">instant appointments</span>{" "}
-                and{" "}
-                <span className="text-success-600 font-semibold">up to 80% savings</span>.
-                Your furry family deserves the best.
-              </p>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                  <span className="text-sm font-semibold ml-1">4.9/5</span>
+                </div>
+              </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                data-testid="button-start-free-trial"
-                className="btn-primary group text-lg px-10 py-5 hover-glow"
-              >
-                <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                Start Free Trial
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-              <button 
-                data-testid="button-chat-dr-paw"
-                className="btn-secondary group text-lg px-10 py-5"
-              >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                Chat with Dr. Paw
-              </button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2 text-success-600">
-                <Check className="w-5 h-5 fill-current" />
-                <span className="font-medium">No card required</span>
+            {/* Enhanced CTA Section */}
+            <div className="space-y-6">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button 
+                  data-testid="button-start-free-trial"
+                  className="btn-primary group text-lg sm:text-xl px-8 py-5 sm:px-12 sm:py-6 hover-glow shadow-strong will-change-transform"
+                >
+                  <Rocket className="w-6 h-6 group-hover:rotate-12 transition-all duration-300" />
+                  <span className="font-bold">Start Free Trial</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-all duration-300" />
+                </button>
+                <button 
+                  data-testid="button-chat-dr-paw"
+                  className="btn-secondary group text-lg sm:text-xl px-8 py-5 sm:px-12 sm:py-6 will-change-transform"
+                >
+                  <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-all duration-300" />
+                  <span className="font-bold">Chat with Dr. Paw</span>
+                </button>
               </div>
-              <div className="flex items-center gap-2 text-success-600">
-                <Check className="w-5 h-5 fill-current" />
-                <span className="font-medium">Cancel anytime</span>
-              </div>
-              <div className="flex items-center gap-2 text-primary-600">
-                <Shield className="w-5 h-5" />
-                <span className="font-medium">HIPAA compliant</span>
+              
+              {/* Enhanced Trust Indicators */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="flex items-center gap-3 glass p-4 rounded-xl">
+                  <Check className="w-6 h-6 text-success-600 fill-current flex-shrink-0" />
+                  <div>
+                    <span className="font-bold text-foreground block">No card required</span>
+                    <span className="text-sm text-muted-foreground">Start instantly</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 glass p-4 rounded-xl">
+                  <Clock className="w-6 h-6 text-primary-600 flex-shrink-0" />
+                  <div>
+                    <span className="font-bold text-foreground block">2-min setup</span>
+                    <span className="text-sm text-muted-foreground">Cancel anytime</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 glass p-4 rounded-xl">
+                  <Shield className="w-6 h-6 text-success-600 flex-shrink-0" />
+                  <div>
+                    <span className="font-bold text-foreground block">HIPAA secure</span>
+                    <span className="text-sm text-muted-foreground">Your data protected</span>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -5,65 +5,95 @@ export default function PlatformToggle() {
   const { currentPlatform, setPlatform } = usePlatform();
 
   return (
-    <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
-      <div className="glass-card p-2 shadow-strong">
-        <div className="relative flex items-center bg-muted/50 rounded-2xl p-1">
-          {/* Sliding Background */}
+    <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in will-change-transform">
+      <div className="glass-card p-3 shadow-strong backdrop-blur-xl">
+        <div className="relative flex items-center rounded-2xl p-1">
+          {/* Enhanced Sliding Background with Gradient */}
           <div 
-            className={`absolute top-1 bottom-1 w-1/2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl shadow-lg transition-all duration-500 ease-out ${
+            className={`absolute top-1 bottom-1 w-1/2 rounded-xl shadow-strong transition-all duration-500 ease-out will-change-transform ${
               currentPlatform === 'pet' ? 'left-1' : 'left-1/2'
             }`}
             style={{
-              boxShadow: '0 4px 20px -2px rgba(99, 102, 241, 0.4)'
+              background: currentPlatform === 'pet' 
+                ? 'linear-gradient(135deg, hsl(235, 89%, 64%) 0%, hsl(147, 100%, 41%) 100%)'
+                : 'linear-gradient(135deg, hsl(235, 89%, 64%) 0%, hsl(220, 100%, 70%) 100%)',
+              boxShadow: currentPlatform === 'pet' 
+                ? '0 8px 32px -8px rgba(16, 185, 129, 0.4)' 
+                : '0 8px 32px -8px rgba(99, 102, 241, 0.4)'
             }}
           />
           
-          {/* Buttons */}
+          {/* Enhanced Buttons */}
           <button
             data-testid="button-pet-platform"
             onClick={() => setPlatform('pet')}
-            className={`relative z-10 flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 ${
+            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold transition-all duration-300 hover:scale-105 will-change-transform ${
               currentPlatform === 'pet'
                 ? 'text-white'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
-            <Heart className={`w-4 h-4 transition-all duration-300 ${
-              currentPlatform === 'pet' ? 'fill-current' : ''
+            <Heart className={`w-5 h-5 transition-all duration-300 ${
+              currentPlatform === 'pet' ? 'fill-current scale-110' : ''
             }`} />
-            Pet Parents
+            <span>Pet Parents</span>
             {currentPlatform === 'pet' && (
-              <Sparkles className="w-3 h-3 animate-pulse-slow" />
+              <Sparkles className="w-4 h-4 animate-pulse-slow text-white/80" />
             )}
           </button>
           
           <button
             data-testid="button-vet-platform"
             onClick={() => setPlatform('vet')}
-            className={`relative z-10 flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 ${
+            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold transition-all duration-300 hover:scale-105 will-change-transform ${
               currentPlatform === 'vet'
                 ? 'text-white'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
-            <Stethoscope className="w-4 h-4" />
-            Veterinarians
+            <Stethoscope className={`w-5 h-5 transition-all duration-300 ${
+              currentPlatform === 'vet' ? 'scale-110' : ''
+            }`} />
+            <span>Veterinarians</span>
             {currentPlatform === 'vet' && (
-              <Sparkles className="w-3 h-3 animate-pulse-slow" />
+              <Sparkles className="w-4 h-4 animate-pulse-slow text-white/80" />
             )}
           </button>
         </div>
         
-        {/* Floating Indicator */}
-        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-          <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse-slow shadow-glow" />
+        {/* Enhanced Floating Indicator */}
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <div className="relative">
+            <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse-slow shadow-glow" />
+            <div className="absolute inset-0 w-3 h-3 bg-primary-500 rounded-full animate-ping" />
+          </div>
+        </div>
+        
+        {/* Platform Status Indicator */}
+        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+          <div className="flex items-center gap-2 glass px-3 py-1 rounded-full text-xs font-medium">
+            <div className="w-1.5 h-1.5 bg-success-500 rounded-full animate-pulse-slow" />
+            <span className="text-muted-foreground">
+              {currentPlatform === 'pet' ? '50k+ Users' : '2.5k+ Vets'}
+            </span>
+          </div>
         </div>
       </div>
       
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 -z-10 opacity-20">
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0 -z-10 opacity-10">
         <div className="w-full h-full bg-grid-pattern" />
       </div>
+      
+      {/* Subtle Glow Effect */}
+      <div 
+        className="absolute inset-0 -z-20 rounded-2xl blur-xl opacity-30 transition-all duration-500"
+        style={{
+          background: currentPlatform === 'pet' 
+            ? 'radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%)'
+        }}
+      />
     </div>
   );
 }

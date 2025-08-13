@@ -50,28 +50,52 @@ export default function PetPricingSection() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-success-500/5 rounded-full blur-3xl floating" />
+    <section id="pricing" className="section-padding gradient-hero relative overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="absolute inset-0 bg-dots-pattern opacity-10" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-success-500/8 rounded-full blur-3xl floating will-change-transform" />
+      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-500/8 rounded-full blur-3xl floating-delayed will-change-transform" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <div className="text-center mb-16 space-y-6">
-          <div className="inline-flex items-center glass rounded-full px-6 py-2 shadow-medium">
-            <DollarSign className="w-4 h-4 text-success-500 mr-2" />
-            <span className="text-sm font-semibold text-foreground">Revolutionary Savings</span>
+      <div className="container-custom relative z-10">
+        {/* Enhanced Header */}
+        <div className="text-center mb-20 space-y-8 animate-fade-in">
+          <div className="inline-flex items-center glass-card px-8 py-4 shadow-strong animate-scale-in">
+            <DollarSign className="w-6 h-6 text-success-500 mr-3" />
+            <span className="text-base font-bold text-foreground">Revolutionary Savings</span>
+            <Sparkles className="w-5 h-5 text-success-500 ml-3 animate-pulse-slow" />
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground font-display">
-            Stop Overpaying for Pet Care
-          </h2>
-          
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our dynamic pricing connects you with available clinics, delivering{" "}
-            <span className="text-success-600 font-semibold">massive savings</span>{" "}
-            without compromising on quality care.
-          </p>
+          <div className="space-y-6">
+            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight">
+              Stop Overpaying for{" "}
+              <span className="relative inline-block">
+                <span className="gradient-text">Pet Care</span>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-success-500 to-primary-500 rounded-full" />
+              </span>
+            </h2>
+            
+            <p className="text-2xl sm:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
+              Dynamic pricing technology connects you with available clinics, delivering{" "}
+              <span className="text-success-600 font-bold relative">up to 80% savings<span className="absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" /></span>{" "}
+              without compromising on quality care
+            </p>
+          </div>
+
+          {/* Trust Indicators Row */}
+          <div className="flex flex-wrap justify-center items-center gap-8 text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Heart className="w-5 h-5 text-success-500 fill-current" />
+              <span className="font-semibold">Same Quality Care</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Zap className="w-5 h-5 text-primary-500" />
+              <span className="font-semibold">Instant Booking</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <TrendingDown className="w-5 h-5 text-success-500" />
+              <span className="font-semibold">Maximum Savings</span>
+            </div>
+          </div>
         </div>
 
         {/* Real Savings Showcase */}
