@@ -1,0 +1,42 @@
+Objective:
+Reimagine the user experience for a next-gen pet care platform that blends AI-powered veterinary guidance, dynamic pricing, and seamless appointment booking. Think vet care—that’s easy, affordable, and totally stress-free.
+
+Target Audience:
+Pet parents (millennials + Gen Z) who want reliable, affordable pet healthcare without hassle.
+
+Key Features & Value Props (anonymized):
+• 24/7 AI-driven veterinary assistant
+• Instant appointment booking
+• Dynamic pricing model delivering up to 80% in savings
+• Zero membership fees
+• Transparent cost comparisons (e.g., wellness exam savings)
+• HIPAA-compliant and opt-in free trial model
+• Seamless onboarding with smart-triggered CTAs
+
+Deliverables:
+• High-fidelity wireframes or clickable prototype
+• Homepage
+• AI assistant chat interface
+• Appointment booking flow
+• Dynamic pricing display module
+• Trial sign-up flow
+• Interaction flows showing how users move through core tasks
+• UI style guide concepts (primary/secondary colors, typography, button styles)
+• Microcopy suggestions (concise, playful, gen-z friendly tone)
+
+Design Goals:
+• Clarity first: Users must understand core benefits (AI support, big savings) within 3 seconds.
+• Trust-centric cues: Use visual badges, simple pricing comparison, and reassurances (e.g. “No membership fees,” “Cancel anytime”).
+• Modern, lighthearted voice: Think “Pet care, simplified”—approachable, confident, helpful.
+• Mobile-first, but fluid: Must work beautifully on mobile and gracefully scale to desktop.
+
+Evaluation Criteria:
+1. Intuitiveness & flow — is the journey clear, smooth, low-friction?
+2. Visual appeal & brand fit — does it feel friendly, trustworthy, tech-forward?
+3. Value communication — are savings, AI support, and ease-of-use evident?
+4. Innovation & edge — does it think outside the box? Delightful touches?
+
+Style tone:
+• Gen-Z inspired (sharp, witty, optimistic)
+• Crunchy corporate chops × empathetic leader vibes
+• Think confident yet warm: “Yes, we’ve got your pet’s back.”
