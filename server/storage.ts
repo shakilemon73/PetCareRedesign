@@ -44,6 +44,7 @@ export class MemStorage implements IStorage {
     const user: User = { 
       ...insertUser, 
       id,
+      userType: insertUser.userType || 'pet_parent',
       createdAt: new Date()
     };
     this.users.set(id, user);
@@ -55,6 +56,8 @@ export class MemStorage implements IStorage {
     const entry: WaitlistEntry = {
       ...insertEntry,
       id,
+      practiceType: insertEntry.practiceType || null,
+      message: insertEntry.message || null,
       createdAt: new Date()
     };
     this.waitlistEntries.set(id, entry);
@@ -75,6 +78,8 @@ export class MemStorage implements IStorage {
     const session: AiChatSession = {
       ...insertSession,
       id,
+      userId: insertSession.userId || null,
+      sessionData: insertSession.sessionData || null,
       isActive: true,
       createdAt: new Date()
     };

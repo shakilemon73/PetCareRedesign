@@ -26,9 +26,14 @@ export default {
           foreground: "var(--primary-foreground)",
           50: "var(--primary-50)",
           100: "var(--primary-100)",
+          200: "var(--primary-200)",
+          300: "var(--primary-300)",
+          400: "var(--primary-400)",
           500: "var(--primary-500)",
           600: "var(--primary-600)",
           700: "var(--primary-700)",
+          800: "var(--primary-800)",
+          900: "var(--primary-900)",
         },
         secondary: {
           DEFAULT: "var(--secondary)",
@@ -40,6 +45,7 @@ export default {
           100: "var(--success-100)",
           500: "var(--success-500)",
           600: "var(--success-600)",
+          700: "var(--success-700)",
         },
         warning: {
           DEFAULT: "var(--warning)",
@@ -47,6 +53,13 @@ export default {
           100: "var(--warning-100)",
           500: "var(--warning-500)",
           600: "var(--warning-600)",
+          700: "var(--warning-700)",
+        },
+        emergency: {
+          DEFAULT: "var(--emergency)",
+          50: "var(--emergency-50)",
+          100: "var(--emergency-100)",
+          500: "var(--emergency-500)",
         },
         muted: {
           DEFAULT: "var(--muted)",
@@ -72,9 +85,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Georgia", "serif"],
-        mono: ["Menlo", "monospace"],
+        sans: ["Manrope", "Inter", "system-ui", "sans-serif"],
+        display: ["Manrope", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Menlo", "monospace"],
       },
       keyframes: {
         "accordion-down": {
