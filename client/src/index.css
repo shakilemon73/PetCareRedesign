@@ -654,7 +654,25 @@
 }
 
 .grid-responsive {
-  @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center;
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center;
+}
+
+.grid-responsive-3 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+.grid-responsive-4 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+}
+
+.grid-auto-fit {
+  @apply grid gap-4 sm:gap-6;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-auto-fill {
+  @apply grid gap-4 sm:gap-6;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 /* Background Patterns */
@@ -713,6 +731,42 @@
     background: white !important;
     box-shadow: none !important;
   }
+}
+
+/* Respect Motion Preferences - WCAG Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .floating,
+  .floating-delayed,
+  .animate-bounce-gentle,
+  .animate-pulse-slow {
+    animation: none !important;
+  }
+}
+
+/* Enhanced Focus Indicators for Accessibility */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+}
+
+/* Better Text Contrast */
+.contrast-enhanced {
+  @apply text-foreground;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Skip Links for Screen Readers */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50;
+  @apply bg-primary-600 text-white px-4 py-2 rounded-md font-medium;
 }
 
 @layer base {

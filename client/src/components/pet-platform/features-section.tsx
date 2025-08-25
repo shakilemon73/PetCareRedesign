@@ -47,70 +47,78 @@ export default function PetFeaturesSection() {
   ];
 
   return (
-    <section id="features" className="section-padding bg-background relative overflow-hidden">
+    <section 
+      id="features" 
+      className="section-padding bg-background relative overflow-hidden"
+      aria-labelledby="features-heading"
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl floating" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-success-500/5 rounded-full blur-3xl floating-delayed" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true" />
+      <div className="hidden lg:block absolute top-1/3 left-1/4 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl floating" aria-hidden="true" />
+      <div className="hidden lg:block absolute bottom-1/3 right-1/4 w-80 h-80 bg-success-500/5 rounded-full blur-3xl floating-delayed" aria-hidden="true" />
       
       <div className="container-custom relative z-10">
         {/* Enhanced Header */}
-        <div className="text-center mb-20 space-y-8 animate-fade-in">
-          <div className="inline-flex items-center glass-card px-8 py-4 shadow-strong animate-scale-in">
-            <Heart className="w-6 h-6 text-primary-500 mr-3 fill-current" />
-            <span className="text-base font-bold text-foreground">Complete Pet Care Platform</span>
-            <CheckCircle2 className="w-5 h-5 text-success-500 ml-3" />
+        <div className="text-center mb-16 sm:mb-20 space-y-6 sm:space-y-8 animate-fade-in">
+          <div className="inline-flex items-center glass p-4 sm:p-6 rounded-2xl shadow-strong animate-scale-in" role="status">
+            <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-primary-500 mr-3 fill-current" aria-hidden="true" />
+            <span className="text-sm sm:text-base font-bold text-foreground">Complete Pet Care Platform</span>
+            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-success-500 ml-3" aria-hidden="true" />
           </div>
           
           <div className="space-y-6">
-            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight">
+            <h2 id="features-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight tracking-tight contrast-enhanced">
               Everything You Need for{" "}
               <span className="relative inline-block">
                 <span className="gradient-text">Pet Care</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-success-500 rounded-full" />
+                <div className="hidden sm:block absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-success-500 rounded-full" aria-hidden="true" />
               </span>
             </h2>
             
-            <p className="text-2xl sm:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium contrast-enhanced">
               Comprehensive care in one beautifully simple platform designed by{" "}
-              <span className="text-primary-600 font-bold relative">pet lovers<span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" /></span>{" "}
+              <span className="text-primary-600 font-bold relative">pet lovers<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" aria-hidden="true" /></span>{" "}
               for pet lovers
             </p>
           </div>
         </div>
 
         {/* Enhanced Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-in-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 animate-slide-in-left" role="list" aria-label="Platform features">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group glass-card shadow-strong hover:shadow-glow-success transition-all duration-500 hover:scale-105 will-change-transform"
+              className="group glass p-6 sm:p-8 rounded-2xl shadow-strong hover:shadow-glow-success transition-all duration-500 hover:scale-105 will-change-transform focus-within:ring-2 focus-within:ring-primary-500"
               style={{ animationDelay: `${index * 100}ms` }}
+              role="listitem"
+              tabIndex={0}
+              aria-labelledby={`feature-title-${index}`}
+              aria-describedby={`feature-description-${index}`}
             >
-              <div className="p-8 space-y-6">
+              <div className="space-y-6">
                 {/* Enhanced Icon */}
                 <div className="relative">
-                  <div className={`w-16 h-16 bg-gradient-to-br from-${feature.color}-500 to-${feature.color}-600 rounded-2xl flex items-center justify-center shadow-strong group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-8 h-8 text-white" />
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-${feature.color}-500 to-${feature.color}-600 rounded-2xl flex items-center justify-center shadow-strong group-hover:scale-110 transition-transform duration-300`} aria-hidden="true">
+                    <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   {/* Highlight Badge */}
-                  <div className={`absolute -top-2 -right-2 bg-${feature.color}-100 dark:bg-${feature.color}-900 text-${feature.color}-600 text-xs font-bold px-2 py-1 rounded-full shadow-medium animate-pulse-slow`}>
+                  <div className={`absolute -top-2 -right-2 bg-${feature.color}-100 dark:bg-${feature.color}-900 text-${feature.color}-600 text-xs font-bold px-2 py-1 rounded-full shadow-medium animate-pulse-slow`} aria-label={`Feature highlight: ${feature.highlight}`}>
                     {feature.highlight}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-foreground font-display group-hover:text-primary-600 transition-colors">
+                  <h3 id={`feature-title-${index}`} className="text-xl sm:text-2xl font-bold text-foreground font-display group-hover:text-primary-600 transition-colors contrast-enhanced">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-base">
+                  <p id={`feature-description-${index}`} className="text-muted-foreground leading-relaxed text-sm sm:text-base contrast-enhanced">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Hover Effect Indicator */}
-                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300" aria-hidden="true">
                   <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm">
                     <Zap className="w-4 h-4" />
                     <span>Learn more</span>
@@ -119,7 +127,7 @@ export default function PetFeaturesSection() {
               </div>
               
               {/* Gradient Border Effect */}
-              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br from-${feature.color}-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
+              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br from-${feature.color}-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} aria-hidden="true" />
             </div>
           ))}
         </div>
