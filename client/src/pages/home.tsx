@@ -6,6 +6,7 @@ import PetHeroSection from "@/components/pet-platform/hero-section";
 import VetHeroSection from "@/components/vet-platform/hero-section";
 import TrustIndicators from "@/components/shared/trust-indicators";
 import PetPricingSection from "@/components/pet-platform/pricing-section";
+import PetAiAssistantSection from "@/components/pet-platform/ai-assistant-section";
 import TwoPowerfulAiAssistantsSection from "@/components/pet-platform/two-powerful-ai-assistants-section";
 import AiAgentsHandleEverythingSection from "@/components/pet-platform/ai-agents-handle-everything-section";
 import PetEmergencySection from "@/components/pet-platform/emergency-section";
@@ -28,6 +29,7 @@ export default function Home() {
           <PetHeroSection />
           <TrustIndicators />
           <PetPricingSection />
+          <PetAiAssistantSection />
           <TwoPowerfulAiAssistantsSection />
           <AiAgentsHandleEverythingSection />
           <PetFeaturesSection />
