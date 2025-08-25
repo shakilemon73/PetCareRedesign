@@ -650,11 +650,14 @@
 }
 
 .container-custom {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  @apply relative;
 }
 
 .grid-responsive {
-  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center;
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 xl:gap-24;
+  @apply items-center lg:items-start;
+  min-height: calc(100vh - 12rem);
 }
 
 .grid-responsive-3 {
@@ -673,6 +676,26 @@
 .grid-auto-fill {
   @apply grid gap-4 sm:gap-6;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Professional Alignment Utilities */
+.content-center {
+  @apply flex flex-col justify-center min-h-[60vh] lg:min-h-[70vh];
+}
+
+.visual-center {
+  @apply flex items-center justify-center lg:justify-end;
+  @apply min-h-[50vh] lg:min-h-[60vh];
+}
+
+.hero-text-balance {
+  @apply max-w-none lg:max-w-2xl xl:max-w-3xl;
+  @apply text-left;
+}
+
+.hero-button-group {
+  @apply flex flex-col sm:flex-row gap-4;
+  @apply items-start sm:items-center;
 }
 
 /* Background Patterns */

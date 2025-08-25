@@ -19,7 +19,7 @@ export default function VetHeroSection() {
       <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
         <div className="grid-responsive">
           {/* Content Section */}
-          <div className="space-y-8 sm:space-y-10 animate-fade-in will-change-opacity">
+          <div className="content-center space-y-8 sm:space-y-10 animate-fade-in will-change-opacity lg:pr-8 xl:pr-12">
             {/* Premium Launch Badge */}
             <div 
               className="inline-flex items-center glass p-4 sm:p-6 shadow-strong animate-scale-in rounded-2xl"
@@ -54,12 +54,12 @@ export default function VetHeroSection() {
                   </span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl font-medium contrast-enhanced">
+                <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed hero-text-balance font-medium contrast-enhanced">
                   Transform your veterinary practice with <span className="text-primary-600 font-bold relative">AI-powered tools<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" aria-hidden="true" /></span> that save{" "}
                   <span className="text-success-600 font-bold relative">75% of documentation time<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" aria-hidden="true" /></span>, improve patient care, and{" "}
                   <span className="text-xl sm:text-2xl lg:text-3xl font-black text-indigo-600 relative">
                     2x
-                    <div className="absolute -top-1 -right-1 text-xs font-bold text-indigo-500 animate-pulse-slow" aria-label="2x more">MORE</div>
+                    <span className="absolute -top-1 -right-1 text-xs font-bold text-indigo-500 animate-pulse-slow" aria-label="2x more">MORE</span>
                   </span>{" "}
                   daily capacity
                 </p>
@@ -90,7 +90,7 @@ export default function VetHeroSection() {
 
             {/* Enhanced CTA Section */}
             <div className="space-y-6">
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="hero-button-group">
                 <button 
                   data-testid="button-vet-watch-demo"
                   className="btn-primary group text-base sm:text-lg font-semibold px-6 sm:px-8 py-4 sm:py-5 hover-glow shadow-strong focus-ring"
@@ -162,8 +162,8 @@ export default function VetHeroSection() {
           </div>
 
           {/* Professional Dashboard Preview */}
-          <div className="relative animate-slide-in-right will-change-transform mt-8 lg:mt-0">
-            <div className="relative">
+          <div className="visual-center relative animate-slide-in-right will-change-transform mt-12 lg:mt-0">
+            <div className="relative w-full max-w-lg xl:max-w-xl mx-auto lg:mx-0">
               {/* Floating Analytics Cards - Hidden on mobile */}
               <div className="hidden lg:block absolute -top-8 -left-8 glass p-4 rounded-2xl shadow-strong floating" aria-hidden="true">
                 <div className="flex items-center gap-3">
@@ -216,7 +216,7 @@ export default function VetHeroSection() {
                   </div>
 
                   {/* AI Suggestions Panel */}
-                  <div className="glass rounded-2xl p-4 sm:p-6 space-y-4">
+                  <div className="glass rounded-2xl p-4 sm:p-6 space-y-4 min-h-[240px] flex flex-col justify-center">
                     <div className="flex items-center gap-3 mb-4">
                       <Sparkles className="w-5 h-5 text-primary-500" aria-hidden="true" />
                       <h5 className="font-bold text-foreground text-base sm:text-lg">AI Recommendations</h5>

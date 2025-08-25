@@ -19,7 +19,7 @@ export default function PetHeroSection() {
       <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
         <div className="grid-responsive">
           {/* Content Section - Enhanced Typography & Hierarchy */}
-          <div className="space-y-8 sm:space-y-10 animate-fade-in will-change-opacity">
+          <div className="content-center space-y-8 sm:space-y-10 animate-fade-in will-change-opacity lg:pr-8 xl:pr-12">
             {/* Premium Status Badge */}
             <div 
               className="inline-flex items-center glass p-4 sm:p-6 shadow-strong animate-scale-in rounded-2xl"
@@ -54,13 +54,13 @@ export default function PetHeroSection() {
                   </span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl font-medium contrast-enhanced">
+                <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed hero-text-balance font-medium contrast-enhanced">
                   Revolutionary <span className="text-primary-600 font-bold relative">AI-powered veterinary care<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" aria-hidden="true" /></span> with{" "}
                   <span className="text-success-600 font-bold relative">instant appointments<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" aria-hidden="true" /></span>{" "}
                   and savings up to{" "}
                   <span className="text-xl sm:text-2xl lg:text-3xl font-black text-success-600 relative">
                     80%
-                    <div className="absolute -top-1 -right-1 text-xs font-bold text-success-500 animate-pulse-slow" aria-label="80 percent off">OFF</div>
+                    <span className="absolute -top-1 -right-1 text-xs font-bold text-success-500 animate-pulse-slow" aria-label="80 percent off">OFF</span>
                   </span>
                 </p>
               </div>
@@ -88,7 +88,7 @@ export default function PetHeroSection() {
 
             {/* Call to Action Buttons */}
             <div className="space-y-6">
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="hero-button-group">
                 <button 
                   data-testid="button-start-free-trial"
                   className="btn-primary group text-base sm:text-lg font-semibold px-6 sm:px-8 py-4 sm:py-5 hover-glow shadow-strong focus-ring"
@@ -172,9 +172,9 @@ export default function PetHeroSection() {
           </div>
 
           {/* Visual Section */}
-          <div className="relative animate-slide-up mt-8 lg:mt-0">
+          <div className="visual-center relative animate-slide-up mt-12 lg:mt-0">
             {/* Main App Interface Mockup */}
-            <div className="relative">
+            <div className="relative w-full max-w-lg xl:max-w-xl mx-auto lg:mx-0">
               <div className="glass p-6 sm:p-8 rounded-3xl shadow-strong" role="img" aria-label="Dr. Paw AI chat interface preview">
                 <div className="space-y-6">
                   {/* AI Chat Interface Header */}
@@ -192,7 +192,7 @@ export default function PetHeroSection() {
                   </div>
 
                   {/* Chat Messages */}
-                  <div className="space-y-4" role="log" aria-label="Chat conversation example">
+                  <div className="space-y-4 min-h-[200px] flex flex-col justify-center" role="log" aria-label="Chat conversation example">
                     <div className="glass rounded-2xl p-4 text-sm max-w-sm">
                       <p className="text-foreground">👋 Hi! I'm Dr. Paw. How can I help your pet today?</p>
                     </div>
