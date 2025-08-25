@@ -6,7 +6,8 @@ import PetHeroSection from "@/components/pet-platform/hero-section";
 import VetHeroSection from "@/components/vet-platform/hero-section";
 import TrustIndicators from "@/components/shared/trust-indicators";
 import PetPricingSection from "@/components/pet-platform/pricing-section";
-import PetAiAssistantSection from "@/components/pet-platform/ai-assistant-section";
+import TwoPowerfulAiAssistantsSection from "@/components/pet-platform/two-powerful-ai-assistants-section";
+import AiAgentsHandleEverythingSection from "@/components/pet-platform/ai-agents-handle-everything-section";
 import PetEmergencySection from "@/components/pet-platform/emergency-section";
 import PetFeaturesSection from "@/components/pet-platform/features-section";
 import VetAiToolsSection from "@/components/vet-platform/ai-tools-section";
@@ -27,7 +28,8 @@ export default function Home() {
           <PetHeroSection />
           <TrustIndicators />
           <PetPricingSection />
-          <PetAiAssistantSection />
+          <TwoPowerfulAiAssistantsSection />
+          <AiAgentsHandleEverythingSection />
           <PetEmergencySection />
           <PetFeaturesSection />
           <section className="py-20 bg-gradient-to-br from-primary-500 to-success-500 text-white">
@@ -52,7 +54,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center space-x-6 text-sm opacity-75">
                 <span className="flex items-center">
-                  <i className="fas fa-check mr-1"></i>Instant access to Dr. Paw
+                  <i className="fas fa-check mr-1"></i>Instant access to Dr. Paw & Marcia AI
                 </span>
                 <span className="flex items-center">
                   <i className="fas fa-check mr-1"></i>Cancel anytime
