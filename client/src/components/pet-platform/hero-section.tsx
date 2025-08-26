@@ -65,7 +65,7 @@ export default function PetHeroSection() {
                   <span className="gradient-text-primary">Veterinary AI</span>
                 </h1>
                 
-                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-medium max-w-4xl hero-text-balance">
+                <div className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-medium max-w-4xl hero-text-balance">
                   Complete pet care coverage through{" "}
                   <span className="font-bold text-purple-600 relative">
                     text, mobile, and video
@@ -77,7 +77,7 @@ export default function PetHeroSection() {
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full opacity-60" />
                   </span>
                   . Ready to transform your pet's healthcare?
-                </p>
+                </div>
               </div>
 
               {/* Social Proof - Modern Design */}
