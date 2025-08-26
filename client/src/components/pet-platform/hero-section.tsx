@@ -46,22 +46,23 @@ export default function PetHeroSection() {
                   id="hero-heading"
                   className="font-display text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight sm:leading-[0.85] tracking-tight contrast-enhanced"
                 >
-                  Pet Care Without the{" "}
+                  Complete Pet Care Platform{" "}
                   <span className="relative inline-block">
-                    <span className="gradient-text">Stress</span>
+                    <span className="gradient-text">Powered by AI</span>
                     <div className="hidden sm:block absolute -bottom-3 left-0 right-0 h-2 bg-gradient-to-r from-primary-500 via-purple-500 to-success-500 rounded-full opacity-70 blur-sm" aria-hidden="true" />
                     <div className="hidden sm:block absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-purple-500 to-success-500 rounded-full" aria-hidden="true" />
                   </span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed hero-text-balance font-medium contrast-enhanced">
-                  Revolutionary <span className="text-primary-600 font-bold relative">AI-powered veterinary care<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" aria-hidden="true" /></span> with{" "}
-                  <span className="text-success-600 font-bold relative">instant appointments<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" aria-hidden="true" /></span>{" "}
-                  and savings up to{" "}
+                  <span className="text-primary-600 font-bold relative">Text, mobile & video coverage<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" aria-hidden="true" /></span> with{" "}
+                  <span className="text-success-600 font-bold relative">revolutionary automation<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" aria-hidden="true" /></span>.{" "}
+                  Save up to{" "}
                   <span className="text-xl sm:text-2xl lg:text-3xl font-black text-success-600 relative">
                     80%
                     <span className="absolute -top-1 -right-1 text-xs font-bold text-success-500 animate-pulse-slow" aria-label="80 percent off">OFF</span>
-                  </span>
+                  </span>{" "}
+                  on pet healthcare.
                 </p>
               </div>
 
