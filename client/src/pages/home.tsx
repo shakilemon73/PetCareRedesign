@@ -4,7 +4,7 @@ import PetNavigation from "@/components/pet-platform/navigation";
 import VetNavigation from "@/components/vet-platform/navigation";
 import PetHeroSection from "@/components/pet-platform/hero-section";
 import VetHeroSection from "@/components/vet-platform/hero-section";
-import PriorityFeaturesList from "@/components/shared/priority-features-list";
+import TrustIndicators from "@/components/shared/trust-indicators";
 import PetPricingSection from "@/components/pet-platform/pricing-section";
 import PetAiAssistantSection from "@/components/pet-platform/ai-assistant-section";
 import TwoPowerfulAiAssistantsSection from "@/components/pet-platform/two-powerful-ai-assistants-section";
@@ -27,13 +27,13 @@ export default function Home() {
         <>
           <PetNavigation />
           <PetHeroSection />
-          <PriorityFeaturesList />
+          <TrustIndicators />
+          <PetEmergencySection />
           <PetPricingSection />
+          <PetFeaturesSection />
           <PetAiAssistantSection />
           <TwoPowerfulAiAssistantsSection />
           <AiAgentsHandleEverythingSection />
-          <PetFeaturesSection />
-          <PetEmergencySection />
           <section className="py-20 bg-gradient-to-br from-primary-500 to-success-500 text-white">
             <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
               <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Pet's Healthcare?</h2>
@@ -72,7 +72,6 @@ export default function Home() {
         <>
           <VetNavigation />
           <VetHeroSection />
-          <PriorityFeaturesList />
           <VetAiToolsSection />
           <VetDemoSection />
           <VetFeaturesSection />
