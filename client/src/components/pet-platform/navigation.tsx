@@ -1,4 +1,4 @@
-import { Heart, Sparkles, Shield, Clock, ArrowRight, Menu, X } from "lucide-react";
+import { Heart, Sparkles, Shield, Clock, ArrowRight, Menu, X, Bot, Video, Smartphone } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function PetNavigation() {
@@ -55,36 +55,36 @@ export default function PetNavigation() {
   return (
     <>
       <nav 
-        className={`glass sticky top-0 z-40 border-b border-border/50 transition-transform duration-300 ${
+        className={`glass-modern sticky top-0 z-40 border-b border-gray-200/50 transition-transform duration-300 ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 sm:h-20">
-            {/* Logo Section */}
-            <div className="flex items-center space-x-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex justify-between items-center h-18 sm:h-20">
+            {/* Logo Section - Modern Gen-Z Design */}
+            <div className="flex items-center space-x-12">
               <a 
                 href="/" 
-                className="flex items-center group focus-ring rounded-lg p-2 -m-2"
+                className="flex items-center group focus-ring rounded-2xl p-3 -m-3"
                 aria-label="Crest Pet Care - Home"
               >
                 <div className="relative" aria-hidden="true">
-                  <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-primary-500 fill-current group-hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-success-500 rounded-full animate-pulse-slow" />
+                  <Heart className="w-8 h-8 text-purple-600 fill-current group-hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
                 </div>
-                <span className="ml-3 text-xl sm:text-2xl font-bold text-foreground font-display">Crest</span>
-                <div className="ml-2 px-2 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full">
+                <span className="ml-3 text-2xl font-bold text-gray-900 font-display">Crest</span>
+                <div className="ml-2 px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">
                   .pet
                 </div>
               </a>
             
-              {/* Desktop Navigation Links */}
+              {/* Desktop Navigation Links - Simplified for Gen-Z */}
               <div className="hidden lg:flex items-center space-x-8" role="menubar">
                 <a 
                   href="#features" 
-                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground font-medium transition-all duration-300 focus-ring rounded-lg px-3 py-2"
+                  className="btn-genz-ghost"
                   role="menuitem"
                   tabIndex={0}
                 >
@@ -93,7 +93,7 @@ export default function PetNavigation() {
                 </a>
                 <a 
                   href="#pricing" 
-                  className="text-muted-foreground hover:text-foreground font-medium transition-all duration-300 focus-ring rounded-lg px-3 py-2"
+                  className="btn-genz-ghost"
                   role="menuitem"
                   tabIndex={0}
                 >
@@ -101,16 +101,17 @@ export default function PetNavigation() {
                 </a>
                 <a 
                   href="#ai-assistant" 
-                  className="relative text-muted-foreground hover:text-foreground font-medium transition-all duration-300 focus-ring rounded-lg px-3 py-2"
+                  className="btn-genz-ghost relative"
                   role="menuitem"
                   tabIndex={0}
                 >
+                  <Bot className="w-4 h-4" aria-hidden="true" />
                   Dr. Paw AI
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-success-500 rounded-full animate-pulse" aria-label="Available" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" aria-label="Available" />
                 </a>
                 <a 
                   href="#emergency" 
-                  className="flex items-center gap-2 text-emergency-500 hover:text-emergency-600 font-medium transition-all duration-300 focus-ring rounded-lg px-3 py-2"
+                  className="btn-genz-ghost text-red-600 hover:text-red-700 font-bold"
                   role="menuitem"
                   tabIndex={0}
                 >
@@ -118,19 +119,23 @@ export default function PetNavigation() {
                   Emergency
                 </a>
               </div>
-          </div>
+            </div>
 
-            {/* Action Buttons */}
+            {/* Action Buttons - Modern Design */}
             <div className="flex items-center space-x-4">
-              {/* Trust Indicator */}
-              <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-success-50 text-success-700 rounded-full text-sm font-medium" role="status" aria-label="Service available 24/7">
-                <Clock className="w-3 h-3" aria-hidden="true" />
-                24/7 Available
+              {/* Status Indicator */}
+              <div 
+                className="hidden sm:flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-bold shadow-sm" 
+                role="status" 
+                aria-label="Service available 24/7"
+              >
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" aria-hidden="true" />
+                24/7 Live
               </div>
               
               <button 
                 data-testid="button-sign-in"
-                className="hidden sm:inline-flex btn-ghost text-sm font-medium focus-ring"
+                className="hidden sm:inline-flex btn-genz-ghost text-sm font-semibold focus-ring"
                 type="button"
                 aria-label="Sign in to your account"
               >
@@ -139,159 +144,108 @@ export default function PetNavigation() {
               
               <button 
                 data-testid="button-get-started"
-                className="hidden sm:inline-flex btn-primary group text-sm sm:text-base focus-ring"
+                className="hidden sm:inline-flex btn-genz-primary focus-ring"
                 type="button"
                 aria-label="Get started with free trial"
               >
-                <span className="hidden sm:inline">Get Started Free</span>
-                <span className="sm:hidden">Get Started</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                <span>Get Started</span>
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </button>
-              
+
               {/* Mobile Menu Button */}
-              <button
-                className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors focus-ring"
+              <button 
+                data-testid="button-mobile-menu"
                 onClick={toggleMobileMenu}
+                className="lg:hidden w-12 h-12 rounded-2xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors focus-ring"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-menu"
-                aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                type="button"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6" aria-hidden="true" />
+                  <X className="w-6 h-6 text-gray-700" aria-hidden="true" />
                 ) : (
-                  <Menu className="w-6 h-6" aria-hidden="true" />
+                  <Menu className="w-6 h-6 text-gray-700" aria-hidden="true" />
                 )}
               </button>
             </div>
           </div>
         </div>
-        
-        {/* Subtle Glow Effect */}
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent" aria-hidden="true" />
-      </nav>
 
-      {/* Mobile Menu */}
-      <div
-        id="mobile-menu"
-        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
-          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        aria-hidden={!isMobileMenuOpen}
-      >
-        {/* Backdrop */}
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm"
-          onClick={toggleMobileMenu}
-          aria-hidden="true"
-        />
-        
-        {/* Menu Panel */}
-        <div
-          className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] glass-card rounded-l-3xl transform transition-transform duration-300 ease-out ${
-            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="mobile-menu-heading"
-        >
-          {/* Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-border">
-            <h2 id="mobile-menu-heading" className="text-lg font-bold text-foreground">Menu</h2>
-            <button
-              onClick={toggleMobileMenu}
-              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors focus-ring"
-              aria-label="Close menu"
-              type="button"
-            >
-              <X className="w-6 h-6" aria-hidden="true" />
-            </button>
-          </div>
-          
-          {/* Menu Content */}
-          <div className="p-6 space-y-6">
-            {/* Navigation Links */}
-            <nav className="space-y-4" role="menu" aria-label="Mobile navigation">
-              <a 
-                href="#features" 
-                className="flex items-center gap-3 p-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent transition-colors focus-ring"
-                role="menuitem"
-                onClick={toggleMobileMenu}
-                tabIndex={isMobileMenuOpen ? 0 : -1}
-              >
-                <Sparkles className="w-5 h-5" aria-hidden="true" />
-                <span className="font-medium">Features</span>
-              </a>
+        {/* Mobile Menu - Gen-Z Design */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200/50">
+            <div className="px-6 py-8 space-y-6">
+              <div className="space-y-4">
+                <a 
+                  href="#features" 
+                  className="flex items-center gap-3 text-gray-700 hover:text-purple-600 font-medium text-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Sparkles className="w-5 h-5" aria-hidden="true" />
+                  Features
+                </a>
+                <a 
+                  href="#pricing" 
+                  className="flex items-center gap-3 text-gray-700 hover:text-purple-600 font-medium text-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </a>
+                <a 
+                  href="#ai-assistant" 
+                  className="flex items-center gap-3 text-gray-700 hover:text-purple-600 font-medium text-lg transition-colors relative"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Bot className="w-5 h-5" aria-hidden="true" />
+                  Dr. Paw AI
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" aria-label="Available" />
+                </a>
+                <a 
+                  href="#emergency" 
+                  className="flex items-center gap-3 text-red-600 hover:text-red-700 font-bold text-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Shield className="w-5 h-5" aria-hidden="true" />
+                  Emergency
+                </a>
+              </div>
               
-              <a 
-                href="#pricing" 
-                className="flex items-center gap-3 p-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent transition-colors focus-ring"
-                role="menuitem"
-                onClick={toggleMobileMenu}
-                tabIndex={isMobileMenuOpen ? 0 : -1}
-              >
-                <span className="w-5 h-5 flex items-center justify-center text-primary-500 font-bold text-sm">$</span>
-                <span className="font-medium">Pricing</span>
-              </a>
+              <div className="pt-6 border-t border-gray-200 space-y-4">
+                <button 
+                  data-testid="button-mobile-sign-in"
+                  className="w-full btn-genz-secondary text-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Sign In
+                </button>
+                <button 
+                  data-testid="button-mobile-get-started"
+                  className="w-full btn-genz-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>Get Started</span>
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                </button>
+              </div>
               
-              <a 
-                href="#ai-assistant" 
-                className="flex items-center gap-3 p-3 rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent transition-colors focus-ring relative"
-                role="menuitem"
-                onClick={toggleMobileMenu}
-                tabIndex={isMobileMenuOpen ? 0 : -1}
-              >
-                <Heart className="w-5 h-5 text-primary-500" aria-hidden="true" />
-                <span className="font-medium">Dr. Paw AI</span>
-                <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse" aria-label="Available" />
-              </a>
-              
-              <a 
-                href="#emergency" 
-                className="flex items-center gap-3 p-3 rounded-xl text-emergency-500 hover:text-emergency-600 hover:bg-emergency-50 transition-colors focus-ring"
-                role="menuitem"
-                onClick={toggleMobileMenu}
-                tabIndex={isMobileMenuOpen ? 0 : -1}
-              >
-                <Shield className="w-5 h-5" aria-hidden="true" />
-                <span className="font-medium">Emergency</span>
-              </a>
-            </nav>
-            
-            {/* Trust Indicator */}
-            <div className="flex items-center gap-2 p-3 bg-success-50 text-success-700 rounded-xl" role="status" aria-label="Service available 24/7">
-              <Clock className="w-4 h-4" aria-hidden="true" />
-              <span className="font-medium">24/7 Available</span>
-            </div>
-            
-            {/* Action Buttons */}
-            <div className="space-y-3 pt-4 border-t border-border">
-              <button 
-                data-testid="mobile-button-sign-in"
-                className="w-full btn-ghost justify-center focus-ring"
-                type="button"
-                onClick={toggleMobileMenu}
-                tabIndex={isMobileMenuOpen ? 0 : -1}
-                aria-label="Sign in to your account"
-              >
-                Sign In
-              </button>
-              
-              <button 
-                data-testid="mobile-button-get-started"
-                className="w-full btn-primary justify-center group focus-ring"
-                type="button"
-                onClick={toggleMobileMenu}
-                tabIndex={isMobileMenuOpen ? 0 : -1}
-                aria-label="Get started with free trial"
-              >
-                Get Started Free
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
-              </button>
+              {/* Mobile Trust Indicators */}
+              <div className="pt-6 border-t border-gray-200 grid grid-cols-3 gap-4 text-center">
+                <div className="flex flex-col items-center gap-2">
+                  <Video className="w-6 h-6 text-purple-600" />
+                  <span className="text-xs font-medium text-gray-600">Video Calls</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Smartphone className="w-6 h-6 text-emerald-600" />
+                  <span className="text-xs font-medium text-gray-600">Mobile App</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Shield className="w-6 h-6 text-blue-600" />
+                  <span className="text-xs font-medium text-gray-600">HIPAA Safe</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </nav>
     </>
   );
 }

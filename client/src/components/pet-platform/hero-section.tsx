@@ -1,259 +1,248 @@
-import { Rocket, MessageCircle, Check, Shield, Heart, Star, Zap, ArrowRight, Sparkles, Award, Users, Clock } from "lucide-react";
+import { Rocket, MessageCircle, Check, Shield, Heart, Star, Zap, ArrowRight, Sparkles, Award, Users, Clock, Video, Smartphone, Bot } from "lucide-react";
 
 export default function PetHeroSection() {
   return (
     <section 
-      className="relative gradient-hero min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-blue-50/30"
       aria-labelledby="hero-heading"
       role="banner"
     >
       {/* Skip Link for Accessibility */}
       <a href="#main-content" className="skip-link">Skip to main content</a>
       
-      {/* Enhanced Background Elements - Reduced for mobile performance */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20" aria-hidden="true" />
-      <div className="hidden lg:block absolute top-20 left-10 w-72 h-72 bg-primary-500/8 rounded-full blur-3xl floating will-change-transform" aria-hidden="true" />
-      <div className="hidden lg:block absolute bottom-20 right-10 w-96 h-96 bg-success-500/8 rounded-full blur-3xl floating-delayed will-change-transform" aria-hidden="true" />
-      <div className="hidden xl:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary-500/3 to-success-500/3 rounded-full blur-3xl" aria-hidden="true" />
+      {/* Modern Background Elements */}
+      <div className="absolute inset-0" aria-hidden="true">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(99,102,241,0.1)_1px,transparent_0)] bg-[length:50px_50px]" />
+        
+        {/* Floating Orbs */}
+        <div className="hidden lg:block absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="hidden lg:block absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="hidden xl:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary-500/5 via-purple-500/5 to-success-500/5 rounded-full blur-3xl" />
+        
+        {/* Modern Geometric Shapes */}
+        <div className="hidden lg:block absolute top-1/4 right-1/4 w-4 h-4 bg-primary-500/60 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
+        <div className="hidden lg:block absolute bottom-1/3 left-1/3 w-6 h-6 bg-success-500/60 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }} />
+        <div className="hidden xl:block absolute top-3/4 right-1/3 w-3 h-3 bg-purple-500/60 rounded-full animate-bounce" style={{ animationDelay: '2s' }} />
+      </div>
       
-      <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 py-24 sm:py-32">
         <div className="grid-responsive">
-          {/* Content Section - Enhanced Typography & Hierarchy */}
-          <div className="content-center space-y-8 sm:space-y-10 animate-fade-in will-change-opacity lg:pr-8 xl:pr-12">
-            {/* Premium Status Badge */}
+          {/* Content Section - World-Class Typography & Spacing */}
+          <div className="content-center space-y-10 sm:space-y-12 animate-fade-in">
+            
+            {/* Status Badge - Redesigned for Gen-Z */}
             <div 
-              className="inline-flex items-center glass p-4 sm:p-6 shadow-strong animate-scale-in rounded-2xl"
+              className="inline-flex items-center glass-modern px-6 py-3 rounded-full shadow-lg animate-scale-in"
               role="status"
               aria-label="24/7 AI Veterinary Support is currently live"
             >
               <div className="flex items-center gap-3">
                 <div className="relative" aria-hidden="true">
-                  <div className="w-3 h-3 bg-success-500 rounded-full animate-pulse-slow" />
-                  <div className="absolute inset-0 w-3 h-3 bg-success-500 rounded-full animate-ping" />
+                  <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
+                  <div className="absolute inset-0 w-3 h-3 bg-emerald-500 rounded-full animate-ping" />
                 </div>
-                <span className="text-sm sm:text-base font-semibold text-foreground">24/7 AI Veterinary Support</span>
-                <div className="flex items-center gap-1 ml-2">
-                  <Sparkles className="w-4 h-4 text-primary-500 animate-pulse-slow" aria-hidden="true" />
-                  <span className="text-xs font-medium text-success-600 bg-success-50 dark:bg-success-900/30 px-2 py-1 rounded-full border border-success-200 dark:border-success-700">LIVE</span>
+                <span className="text-sm font-bold text-gray-800">24/7 AI Veterinary Support</span>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-purple-600 animate-pulse" aria-hidden="true" />
+                  <span className="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">LIVE NOW</span>
                 </div>
               </div>
             </div>
 
-            {/* Revolutionary Headline with Better Typography */}
-            <div className="space-y-6">
-              <div className="space-y-4">
+            {/* Main Headline - Gen-Z Focused Design */}
+            <div className="space-y-8">
+              <div className="space-y-6">
                 <h1 
                   id="hero-heading"
-                  className="font-display text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight sm:leading-[0.85] tracking-tight contrast-enhanced"
+                  className="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.85] tracking-tight contrast-enhanced"
                 >
-                  Complete Pet Care Platform{" "}
-                  <span className="relative inline-block">
-                    <span className="gradient-text">Powered by AI</span>
-                    <div className="hidden sm:block absolute -bottom-3 left-0 right-0 h-2 bg-gradient-to-r from-primary-500 via-purple-500 to-success-500 rounded-full opacity-70 blur-sm" aria-hidden="true" />
-                    <div className="hidden sm:block absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-purple-500 to-success-500 rounded-full" aria-hidden="true" />
-                  </span>
+                  <span className="text-gray-900">Complete Pet Care</span>
+                  <br />
+                  <span className="text-gray-900">Platform - </span>
+                  <span className="gradient-text-primary">Powered by</span>
+                  <br />
+                  <span className="gradient-text-primary">Veterinary AI</span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed hero-text-balance font-medium contrast-enhanced">
-                  <span className="text-primary-600 font-bold relative">Text, mobile & video coverage<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-primary-500/30" aria-hidden="true" /></span> with{" "}
-                  <span className="text-success-600 font-bold relative">revolutionary automation<span className="hidden sm:block absolute bottom-0 left-0 w-full h-0.5 bg-success-500/30" aria-hidden="true" /></span>.{" "}
-                  Save up to{" "}
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-black text-success-600 relative">
-                    80%
-                    <span className="absolute -top-1 -right-1 text-xs font-bold text-success-500 animate-pulse-slow" aria-label="80 percent off">OFF</span>
+                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-medium max-w-4xl hero-text-balance">
+                  Complete pet care coverage through{" "}
+                  <span className="font-bold text-purple-600 relative">
+                    text, mobile, and video
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full opacity-60" />
                   </span>{" "}
-                  on pet healthcare.
+                  with{" "}
+                  <span className="font-bold text-emerald-600 relative">
+                    revolutionary automation
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full opacity-60" />
+                  </span>
+                  . Ready to transform your pet's healthcare?
                 </p>
               </div>
 
-              {/* Social Proof & Recognition */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-muted-foreground" role="group" aria-label="Customer testimonials">
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2" aria-hidden="true">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-success-500 border-2 border-white dark:border-background shadow-medium" />
+              {/* Social Proof - Modern Design */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6" role="group" aria-label="Customer testimonials">
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3" aria-hidden="true">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <div key={i} className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 border-3 border-white shadow-lg" />
                     ))}
                   </div>
-                  <span className="text-sm font-medium">
-                    <span className="text-primary-600 font-bold">50,000+</span> pet parents trust us
-                  </span>
+                  <div className="text-left">
+                    <div className="text-lg font-bold text-gray-900">50,000+</div>
+                    <div className="text-sm text-gray-600">Happy Pet Parents</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1" role="img" aria-label="4.9 out of 5 stars rating">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
-                  ))}
-                  <span className="text-sm font-semibold ml-1">4.9/5</span>
+                <div className="flex items-center gap-2" role="img" aria-label="4.9 out of 5 stars rating">
+                  <div className="flex gap-1">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                    ))}
+                  </div>
+                  <span className="text-lg font-bold text-gray-900">4.9/5</span>
+                  <span className="text-sm text-gray-600">(12k+ reviews)</span>
                 </div>
               </div>
             </div>
 
-            {/* Call to Action Buttons */}
-            <div className="space-y-6">
+            {/* CTA Buttons - Gen-Z Design with Strong CTAs */}
+            <div className="space-y-8">
               <div className="hero-button-group">
                 <button 
                   data-testid="button-start-free-trial"
-                  className="btn-primary group text-base sm:text-lg font-semibold px-6 sm:px-8 py-4 sm:py-5 hover-glow shadow-strong focus-ring"
+                  className="btn-genz-primary group focus-ring"
                   type="button"
                   aria-describedby="trial-description"
                 >
-                  <Rocket className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-all duration-300" aria-hidden="true" />
-                  <span>Start Free Trial</span>
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-all duration-300" aria-hidden="true" />
+                  <Rocket className="w-6 h-6 group-hover:rotate-12 transition-all duration-300" aria-hidden="true" />
+                  <span>Start Free Trial - No Card Required</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-all duration-300" aria-hidden="true" />
                 </button>
                 <button 
                   data-testid="button-chat-dr-paw"
-                  className="btn-secondary group text-base sm:text-lg font-semibold px-6 sm:px-8 py-4 sm:py-5 focus-ring"
+                  className="btn-genz-secondary group focus-ring"
                   type="button"
                   aria-label="Start a chat conversation with Dr. Paw AI assistant"
                 >
-                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
-                  <span>Chat with Dr. Paw</span>
+                  <Bot className="w-6 h-6 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
+                  <span>Chat with Dr. Paw AI</span>
                 </button>
               </div>
               
-              {/* Trust Indicators */}
+              {/* Trust Indicators - Modern Grid Layout */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" role="list" aria-label="Service benefits">
-                <div className="flex items-center gap-3 glass p-4 rounded-xl" role="listitem">
-                  <Check className="w-6 h-6 text-success-600 fill-current flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <span className="font-bold text-foreground block">No card required</span>
-                    <span className="text-sm text-muted-foreground">Start instantly</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 glass p-4 rounded-xl" role="listitem">
-                  <Clock className="w-6 h-6 text-primary-600 flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <span className="font-bold text-foreground block">2-min setup</span>
-                    <span className="text-sm text-muted-foreground">Cancel anytime</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 glass p-4 rounded-xl" role="listitem">
-                  <Shield className="w-6 h-6 text-success-600 flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <span className="font-bold text-foreground block">HIPAA secure</span>
-                    <span className="text-sm text-muted-foreground">Your data protected</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Hidden description for screen readers */}
-              <div id="trial-description" className="sr-only">
-                Start your free trial with no credit card required. Setup takes only 2 minutes and you can cancel anytime. All data is HIPAA secure and protected.
-              </div>
-            </div>
-
-            {/* Enhanced Social Proof */}
-            <div className="glass p-6 sm:p-8 rounded-2xl" role="region" aria-labelledby="social-proof-heading">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <div className="flex -space-x-2" aria-hidden="true">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div 
-                        key={i}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-200 to-success-200 border-2 border-white shadow-sm"
-                      />
-                    ))}
-                  </div>
-                  <div>
-                    <h3 id="social-proof-heading" className="font-semibold text-foreground text-base sm:text-lg">50,000+ Happy Pet Parents</h3>
-                    <div className="flex items-center gap-1" role="img" aria-label="4.9 out of 5 stars rating">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} className="w-4 h-4 text-warning-500 fill-current" aria-hidden="true" />
-                      ))}
-                      <span className="text-sm text-muted-foreground ml-2">4.9/5 Rating</span>
+                <div className="card-feature group" role="listitem">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                      <Check className="w-6 h-6 text-emerald-600" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900">No Card Required</div>
+                      <div className="text-sm text-gray-600">Start instantly</div>
                     </div>
                   </div>
                 </div>
-                <div className="text-left sm:text-right">
-                  <p className="text-xl sm:text-2xl font-bold text-primary-600">$2.3M+</p>
-                  <p className="text-sm text-muted-foreground">Saved on Vet Bills</p>
+                <div className="card-feature group" role="listitem">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Clock className="w-6 h-6 text-purple-600" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900">24/7 Support</div>
+                      <div className="text-sm text-gray-600">Always available</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-feature group" role="listitem">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <Shield className="w-6 h-6 text-blue-600" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900">HIPAA Compliant</div>
+                      <div className="text-sm text-gray-600">Secure & private</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Visual Section */}
-          <div className="visual-center relative animate-slide-up mt-12 lg:mt-0">
-            {/* Main App Interface Mockup */}
-            <div className="relative w-full max-w-lg xl:max-w-xl mx-auto lg:mx-0">
-              <div className="glass p-6 sm:p-8 rounded-3xl shadow-strong" role="img" aria-label="Dr. Paw AI chat interface preview">
-                <div className="space-y-6">
-                  {/* AI Chat Interface Header */}
-                  <div className="flex items-center gap-3 pb-4 border-b border-border">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-success-500 rounded-2xl flex items-center justify-center shadow-lg" aria-hidden="true">
-                      <Heart className="w-6 h-6 text-white fill-current" />
+          {/* Visual Section - Modern AI Interface Preview */}
+          <div className="visual-center animate-slide-in-right">
+            <div className="relative max-w-lg mx-auto">
+              {/* Main Chat Interface Preview */}
+              <div className="card-modern max-w-md mx-auto">
+                <div className="space-y-4">
+                  {/* Header */}
+                  <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                      <Bot className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-foreground text-base sm:text-lg">Dr. Paw AI</h4>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse-slow" aria-hidden="true" />
-                        <span className="text-sm text-success-600 font-medium">Online & Ready</span>
+                      <div className="font-bold text-gray-900">Dr. Paw AI</div>
+                      <div className="text-sm text-emerald-600 flex items-center gap-1">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                        Online now
                       </div>
                     </div>
                   </div>
-
+                  
                   {/* Chat Messages */}
-                  <div className="space-y-4 min-h-[200px] flex flex-col justify-center" role="log" aria-label="Chat conversation example">
-                    <div className="glass rounded-2xl p-4 text-sm max-w-sm">
-                      <p className="text-foreground">👋 Hi! I'm Dr. Paw. How can I help your pet today?</p>
+                  <div className="space-y-4">
+                    <div className="flex gap-3">
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex-shrink-0" />
+                      <div className="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs">
+                        <p className="text-sm text-gray-800">Hi! I'm Dr. Paw. What's concerning you about your pet today?</p>
+                      </div>
                     </div>
-                    <div className="bg-primary-500 text-white rounded-2xl p-4 text-sm ml-8 max-w-sm">
-                      <p>My dog seems to be limping on his front paw</p>
+                    
+                    <div className="flex gap-3 justify-end">
+                      <div className="bg-purple-500 rounded-2xl rounded-br-md px-4 py-3 max-w-xs">
+                        <p className="text-sm text-white">My dog has been limping since yesterday</p>
+                      </div>
+                      <div className="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0" />
                     </div>
-                    <div className="glass rounded-2xl p-4 text-sm max-w-sm">
-                      <p className="text-foreground mb-2">I understand your concern. Let me assess this:</p>
-                      <ul className="space-y-1 text-muted-foreground list-disc list-inside">
-                        <li>When did you notice the limping?</li>
-                        <li>Is there visible swelling?</li>
-                        <li>Any recent injuries?</li>
-                      </ul>
+                    
+                    <div className="flex gap-3">
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex-shrink-0" />
+                      <div className="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs">
+                        <p className="text-sm text-gray-800">I can help! Can you tell me which leg and if there's any swelling?</p>
+                      </div>
                     </div>
                   </div>
-
-                  {/* Chat Input */}
-                  <div className="flex items-center gap-2 pt-4">
-                    <div className="flex-1 glass rounded-full px-4 py-2">
-                      <label htmlFor="chat-input" className="sr-only">Type your response to Dr. Paw</label>
-                      <input 
-                        id="chat-input"
-                        type="text" 
-                        placeholder="Type your response..." 
-                        className="w-full bg-transparent text-sm placeholder:text-muted-foreground outline-none focus:outline-none"
-                        data-testid="input-chat-message"
-                        aria-label="Chat message input"
-                      />
+                  
+                  {/* Input Area */}
+                  <div className="flex items-center gap-2 pt-4 border-t border-gray-200">
+                    <div className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-500">
+                      Type your message...
                     </div>
-                    <button 
-                      data-testid="button-send-message"
-                      className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors shadow-lg focus-ring"
-                      type="button"
-                      aria-label="Send message"
-                    >
-                      <ArrowRight className="w-4 h-4 text-white" aria-hidden="true" />
+                    <button className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white">
+                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
               </div>
-
-              {/* Floating Status Cards - Hidden on mobile for better UX */}
-              <div className="hidden lg:block absolute -top-4 -right-4 glass p-3 rounded-xl animate-bounce-gentle" aria-hidden="true">
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 glass-modern rounded-2xl p-4 shadow-lg">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-warning-500" />
-                  <span className="text-sm font-medium text-foreground">Instant Response</span>
+                  <Video className="w-5 h-5 text-purple-600" />
+                  <span className="text-sm font-medium text-gray-800">Video Calls</span>
                 </div>
               </div>
-
-              <div className="hidden lg:block absolute -bottom-6 -left-6 glass p-3 rounded-xl" aria-hidden="true">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-success-500 rounded-full animate-pulse-slow" />
-                  <span className="text-sm font-medium text-foreground">Available 24/7</span>
+              
+              <div className="absolute -bottom-4 -left-4 glass-modern rounded-2xl p-4 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <Smartphone className="w-5 h-5 text-emerald-600" />
+                  <span className="text-sm font-medium text-gray-800">Mobile Support</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       {/* Main content landmark for skip link */}
       <div id="main-content" className="sr-only">Main content starts after hero section</div>
     </section>
