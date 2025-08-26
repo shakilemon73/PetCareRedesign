@@ -79,7 +79,7 @@ export default function PetEmergencySection() {
               {/* CTA Button */}
               <button 
                 data-testid="button-emergency-call"
-                className="w-full bg-gradient-to-r from-emergency-500 to-emergency-600 text-white py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-strong group flex items-center justify-center gap-3"
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg group flex items-center justify-center gap-3"
               >
                 <Phone className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                 Call Emergency Line
@@ -128,7 +128,7 @@ export default function PetEmergencySection() {
               {/* CTA Button */}
               <button 
                 data-testid="button-chat-emergency"
-                className="w-full bg-gradient-to-r from-warning-500 to-warning-600 text-white py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-strong group flex items-center justify-center gap-3"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg group flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                 Chat with Dr. Paw

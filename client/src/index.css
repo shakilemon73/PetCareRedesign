@@ -477,28 +477,30 @@
     @apply flex items-center justify-center;
   }
   
-  /* Modern Spacing System */
-  .space-section { @apply py-20 md:py-24 lg:py-32; }
-  .space-component { @apply py-12 md:py-16 lg:py-20; }
+  /* Mobile-First Spacing System */
+  .space-section { @apply py-16 md:py-20 lg:py-24; }
+  .space-component { @apply py-10 md:py-12 lg:py-16; }
   .space-element { @apply py-6 md:py-8 lg:py-10; }
   .space-tight { @apply py-4 md:py-6; }
   
-  /* Gen-Z Button Styles */
+  /* Gen-Z Button Styles - Mobile Optimized */
   .btn-genz-primary {
-    @apply inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl;
+    @apply inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 rounded-2xl;
     @apply bg-gradient-to-r from-primary-500 via-purple-600 to-primary-600;
-    @apply text-white font-bold text-lg;
+    @apply text-white font-bold text-base sm:text-lg;
     @apply shadow-lg hover:shadow-2xl transform hover:scale-105;
     @apply transition-all duration-300 ease-out;
     @apply border-2 border-transparent hover:border-white/20;
+    min-height: 44px; /* Ensure touch target minimum */
   }
   
   .btn-genz-secondary {
-    @apply inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl;
-    @apply bg-white/90 backdrop-blur-sm text-gray-900 font-semibold text-lg;
+    @apply inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-8 rounded-2xl;
+    @apply bg-white/90 backdrop-blur-sm text-gray-900 font-semibold text-base sm:text-lg;
     @apply border-2 border-gray-200 hover:border-primary-300;
     @apply shadow-md hover:shadow-xl transform hover:scale-105;
     @apply transition-all duration-300 ease-out;
+    min-height: 44px; /* Ensure touch target minimum */
   }
   
   .btn-genz-ghost {
@@ -756,12 +758,12 @@
 }
 
 .floating {
-  animation: floating 6s ease-in-out infinite;
+  animation: floating 10s ease-in-out infinite;
 }
 
 .floating-delayed {
-  animation: floating 6s ease-in-out infinite;
-  animation-delay: 2s;
+  animation: floating 10s ease-in-out infinite;
+  animation-delay: 4s;
 }
 
 /* Advanced Layout Utilities */

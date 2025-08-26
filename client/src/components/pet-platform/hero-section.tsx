@@ -8,28 +8,26 @@ export default function PetHeroSection() {
       role="banner"
     >
       {/* Skip Link for Accessibility */}
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
       
       {/* Modern Background Elements */}
       <div className="absolute inset-0" aria-hidden="true">
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(99,102,241,0.1)_1px,transparent_0)] bg-[length:50px_50px]" />
         
-        {/* Floating Orbs */}
-        <div className="hidden lg:block absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="hidden lg:block absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="hidden xl:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary-500/5 via-purple-500/5 to-success-500/5 rounded-full blur-3xl" />
+        {/* Floating Orbs - Optimized */}
+        <div className="hidden lg:block absolute top-20 left-20 w-48 h-48 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-xl animate-pulse-slow" />
+        <div className="hidden lg:block absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-lg animate-pulse-slow" style={{ animationDelay: '2s' }} />
         
-        {/* Modern Geometric Shapes */}
-        <div className="hidden lg:block absolute top-1/4 right-1/4 w-4 h-4 bg-primary-500/60 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
-        <div className="hidden lg:block absolute bottom-1/3 left-1/3 w-6 h-6 bg-success-500/60 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }} />
-        <div className="hidden xl:block absolute top-3/4 right-1/3 w-3 h-3 bg-purple-500/60 rounded-full animate-bounce" style={{ animationDelay: '2s' }} />
+        {/* Geometric Shapes - Minimal */}
+        <div className="hidden xl:block absolute top-1/4 right-1/4 w-3 h-3 bg-primary-500/40 rounded-full animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="hidden xl:block absolute bottom-1/3 left-1/3 w-4 h-4 bg-success-500/40 rounded-full animate-pulse-slow" style={{ animationDelay: '3s' }} />
       </div>
       
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 py-24 sm:py-32">
-        <div className="grid-responsive">
-          {/* Content Section - World-Class Typography & Spacing */}
-          <div className="content-center space-y-10 sm:space-y-12 animate-fade-in">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Content Section - World-Class Typography & Spacing - 60% on desktop */}
+          <div className="space-y-10 sm:space-y-12 animate-fade-in lg:flex-[3]">
             
             {/* Status Badge - Redesigned for Gen-Z */}
             <div 
@@ -55,7 +53,7 @@ export default function PetHeroSection() {
               <div className="space-y-6">
                 <h1 
                   id="hero-heading"
-                  className="font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.85] tracking-tight contrast-enhanced"
+                  className="font-display text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] tracking-tight"
                 >
                   <span className="text-gray-900">Complete Pet Care</span>
                   <br />
@@ -168,9 +166,9 @@ export default function PetHeroSection() {
             </div>
           </div>
 
-          {/* Visual Section - Modern AI Interface Preview */}
-          <div className="visual-center animate-slide-in-right">
-            <div className="relative max-w-lg mx-auto">
+          {/* Visual Section - Modern AI Interface Preview - 40% on desktop */}
+          <div className="animate-slide-in-right lg:flex-[2]">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
               {/* Main Chat Interface Preview */}
               <div className="card-modern max-w-md mx-auto">
                 <div className="space-y-4">
@@ -224,18 +222,18 @@ export default function PetHeroSection() {
                 </div>
               </div>
               
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 glass-modern rounded-2xl p-4 shadow-lg">
+              {/* Floating Elements - Simplified for better mobile experience */}
+              <div className="hidden lg:block absolute -top-4 -right-4 glass-modern rounded-2xl p-3 shadow-lg">
                 <div className="flex items-center gap-2">
-                  <Video className="w-5 h-5 text-purple-600" />
-                  <span className="text-sm font-medium text-gray-800">Video Calls</span>
+                  <Video className="w-4 h-4 text-purple-600" />
+                  <span className="text-xs font-medium text-gray-800">Video Calls</span>
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -left-4 glass-modern rounded-2xl p-4 shadow-lg">
+              <div className="hidden lg:block absolute -bottom-4 -left-4 glass-modern rounded-2xl p-3 shadow-lg">
                 <div className="flex items-center gap-2">
-                  <Smartphone className="w-5 h-5 text-emerald-600" />
-                  <span className="text-sm font-medium text-gray-800">Mobile Support</span>
+                  <Smartphone className="w-4 h-4 text-emerald-600" />
+                  <span className="text-xs font-medium text-gray-800">Mobile Support</span>
                 </div>
               </div>
             </div>

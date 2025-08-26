@@ -5,7 +5,7 @@ export default function PlatformToggle() {
   const { currentPlatform, setPlatform } = usePlatform();
 
   return (
-    <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in will-change-transform">
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 animate-fade-in will-change-transform">
       {/* Julie Zhuo - Systems Thinking & Jonathan Ive - Simplicity */}
       <div className="glass-card p-3 shadow-strong backdrop-blur-xl clean-edges">
         <div className="relative flex items-center rounded-2xl p-1 systematic-spacing">
@@ -28,7 +28,7 @@ export default function PlatformToggle() {
           <button
             data-testid="button-pet-platform"
             onClick={() => setPlatform('pet')}
-            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold clickable feedback-immediate touch-friendly recognition-over-recall ${
+            className={`relative z-10 flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 ${
               currentPlatform === 'pet'
                 ? 'text-white'
                 : 'text-muted-foreground hover:text-foreground'
@@ -48,7 +48,7 @@ export default function PlatformToggle() {
           <button
             data-testid="button-vet-platform"
             onClick={() => setPlatform('vet')}
-            className={`relative z-10 flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-bold clickable feedback-immediate touch-friendly recognition-over-recall ${
+            className={`relative z-10 flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 ${
               currentPlatform === 'vet'
                 ? 'text-white'
                 : 'text-muted-foreground hover:text-foreground'
@@ -65,40 +65,7 @@ export default function PlatformToggle() {
             )}
           </button>
         </div>
-        
-        {/* Enhanced Floating Indicator */}
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <div className="relative">
-            <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse-slow shadow-glow" />
-            <div className="absolute inset-0 w-3 h-3 bg-primary-500 rounded-full animate-ping" />
-          </div>
-        </div>
-        
-        {/* Platform Status Indicator */}
-        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
-          <div className="flex items-center gap-2 glass px-3 py-1 rounded-full text-xs font-medium">
-            <div className="w-1.5 h-1.5 bg-success-500 rounded-full animate-pulse-slow" />
-            <span className="text-muted-foreground">
-              {currentPlatform === 'pet' ? '50k+ Users' : '2.5k+ Vets'}
-            </span>
-          </div>
-        </div>
       </div>
-      
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 -z-10 opacity-10">
-        <div className="w-full h-full bg-grid-pattern" />
-      </div>
-      
-      {/* Subtle Glow Effect */}
-      <div 
-        className="absolute inset-0 -z-20 rounded-2xl blur-xl opacity-30 transition-all duration-500"
-        style={{
-          background: currentPlatform === 'pet' 
-            ? 'radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%)'
-            : 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%)'
-        }}
-      />
     </div>
   );
 }

@@ -110,7 +110,7 @@ export default function PetPricingSection() {
               <div 
                 key={item.id}
                 data-testid={`savings-${item.id}`} 
-                className={`glass-card bg-${item.color}-50 dark:bg-${item.color}-900/20 hover-lift group cursor-pointer border border-${item.color}-200 dark:border-${item.color}-800`}
+                className={`glass-card ${item.color === 'success' ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800' : item.color === 'primary' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800' : 'bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800'} hover-lift group cursor-pointer`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="text-center">
@@ -121,13 +121,13 @@ export default function PetPricingSection() {
                     </span>
                   </div>
                   
-                  <div className={`text-5xl font-bold text-${item.color}-600 mb-3 font-display group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`text-5xl font-bold ${item.color === 'success' ? 'text-green-600' : item.color === 'primary' ? 'text-blue-600' : 'text-orange-600'} mb-3 font-display group-hover:scale-110 transition-transform duration-300`}>
                     {item.crest}
                   </div>
                   
                   <div className="text-lg font-semibold text-foreground mb-3">{item.service}</div>
                   
-                  <div className={`inline-flex items-center gap-2 bg-${item.color}-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg`}>
+                  <div className={`inline-flex items-center gap-2 ${item.color === 'success' ? 'bg-green-500' : item.color === 'primary' ? 'bg-blue-500' : 'bg-orange-500'} text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg`}>
                     <Sparkles className="w-4 h-4" />
                     {item.savings}% OFF
                   </div>
@@ -156,8 +156,8 @@ export default function PetPricingSection() {
               className="text-center space-y-6 animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className={`w-20 h-20 bg-${feature.color}-100 dark:bg-${feature.color}-900/30 rounded-3xl flex items-center justify-center mx-auto shadow-lg hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className={`w-10 h-10 text-${feature.color}-500`} />
+              <div className={`w-20 h-20 ${feature.color === 'success' ? 'bg-green-100 dark:bg-green-900/30' : feature.color === 'primary' ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-orange-100 dark:bg-orange-900/30'} rounded-3xl flex items-center justify-center mx-auto shadow-lg hover:scale-110 transition-transform duration-300`}>
+                <feature.icon className={`w-10 h-10 ${feature.color === 'success' ? 'text-green-500' : feature.color === 'primary' ? 'text-blue-500' : 'text-orange-500'}`} />
               </div>
               
               <div>

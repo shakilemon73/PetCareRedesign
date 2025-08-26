@@ -6,9 +6,7 @@ import PetHeroSection from "@/components/pet-platform/hero-section";
 import VetHeroSection from "@/components/vet-platform/hero-section";
 import TrustIndicators from "@/components/shared/trust-indicators";
 import PetPricingSection from "@/components/pet-platform/pricing-section";
-import PetAiAssistantSection from "@/components/pet-platform/ai-assistant-section";
-import TwoPowerfulAiAssistantsSection from "@/components/pet-platform/two-powerful-ai-assistants-section";
-import AiAgentsHandleEverythingSection from "@/components/pet-platform/ai-agents-handle-everything-section";
+import ConsolidatedAiSection from "@/components/pet-platform/consolidated-ai-section";
 import PetEmergencySection from "@/components/pet-platform/emergency-section";
 import PetFeaturesSection from "@/components/pet-platform/features-section";
 import VetAiToolsSection from "@/components/vet-platform/ai-tools-section";
@@ -32,9 +30,7 @@ export default function Home() {
           <PetEmergencySection />
           <PetPricingSection />
           <PetFeaturesSection />
-          <PetAiAssistantSection />
-          <TwoPowerfulAiAssistantsSection />
-          <AiAgentsHandleEverythingSection />
+          <ConsolidatedAiSection />
           <section className="space-section bg-gradient-to-br from-purple-600 via-blue-600 to-purple-700 text-white relative overflow-hidden">
             {/* Modern Background Elements */}
             <div className="absolute inset-0" aria-hidden="true">

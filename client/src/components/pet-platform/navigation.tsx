@@ -173,7 +173,7 @@ export default function PetNavigation() {
         {/* Mobile Menu - Gen-Z Design */}
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200/50">
-            <div className="px-6 py-8 space-y-6">
+            <div className="px-6 py-6 space-y-5">
               <div className="space-y-4">
                 <a 
                   href="#features" 
@@ -209,7 +209,7 @@ export default function PetNavigation() {
                 </a>
               </div>
               
-              <div className="pt-6 border-t border-gray-200 space-y-4">
+              <div className="pt-5 border-t border-gray-200 space-y-3">
                 <button 
                   data-testid="button-mobile-sign-in"
                   className="w-full btn-genz-secondary text-center"
@@ -227,19 +227,11 @@ export default function PetNavigation() {
                 </button>
               </div>
               
-              {/* Mobile Trust Indicators */}
-              <div className="pt-6 border-t border-gray-200 grid grid-cols-3 gap-4 text-center">
-                <div className="flex flex-col items-center gap-2">
-                  <Video className="w-6 h-6 text-purple-600" />
-                  <span className="text-xs font-medium text-gray-600">Video Calls</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Smartphone className="w-6 h-6 text-emerald-600" />
-                  <span className="text-xs font-medium text-gray-600">Mobile App</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Shield className="w-6 h-6 text-blue-600" />
-                  <span className="text-xs font-medium text-gray-600">HIPAA Safe</span>
+              {/* Simplified Mobile Trust */}
+              <div className="pt-4 text-center">
+                <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="font-medium">24/7 Support • HIPAA Secure</span>
                 </div>
               </div>
             </div>
