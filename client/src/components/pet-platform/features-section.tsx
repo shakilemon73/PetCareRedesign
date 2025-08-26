@@ -1,6 +1,10 @@
-import { Calendar, TrendingUp, Pill, Users, Shield, Smartphone, Heart, Zap, Clock, Brain, Award, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { Calendar, TrendingUp, Pill, Users, Shield, Smartphone, Heart, Zap, Clock, Brain, Award, CheckCircle2, ArrowRight } from "lucide-react";
+import AppointmentBooking from "./appointment-booking";
 
 export default function PetFeaturesSection() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   const features = [
     {
       icon: Calendar,
@@ -166,6 +170,11 @@ export default function PetFeaturesSection() {
           </div>
         </div>
       </div>
+
+      <AppointmentBooking 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </section>
   );
 }

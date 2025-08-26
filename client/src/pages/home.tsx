@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { usePlatform } from "@/hooks/use-platform";
 import PlatformToggle from "@/components/platform-toggle";
+import TrialSignupFlow from "@/components/pet-platform/trial-signup-flow";
 import PetNavigation from "@/components/pet-platform/navigation";
 import VetNavigation from "@/components/vet-platform/navigation";
 import PetHeroSection from "@/components/pet-platform/hero-section";
@@ -17,6 +19,7 @@ import { ArrowRight, Play, Check, Star } from "lucide-react";
 
 export default function Home() {
   const { currentPlatform } = usePlatform();
+  const [isTrialSignupOpen, setIsTrialSignupOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -58,6 +61,7 @@ export default function Home() {
                 {/* Enhanced CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <button 
+                    onClick={() => setIsTrialSignupOpen(true)}
                     data-testid="button-start-trial"
                     className="group bg-white text-purple-600 px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 min-w-[280px] sm:min-w-[320px] flex items-center justify-center gap-3"
                   >
@@ -65,11 +69,11 @@ export default function Home() {
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </button>
                   <button 
-                    data-testid="button-watch-demo"
+                    data-testid="button-book-appointment-hero"
                     className="group border-2 border-white/80 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 min-w-[280px] sm:min-w-[320px] flex items-center justify-center gap-3 backdrop-blur-sm"
                   >
-                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                    <span>Watch 2-Min Demo</span>
+                    <Check className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                    <span>Book Instant Appointment</span>
                   </button>
                 </div>
                 
@@ -160,6 +164,10 @@ export default function Home() {
       )}
       
       <Footer />
+      <TrialSignupFlow 
+        isOpen={isTrialSignupOpen} 
+        onClose={() => setIsTrialSignupOpen(false)} 
+      />
     </div>
   );
 }

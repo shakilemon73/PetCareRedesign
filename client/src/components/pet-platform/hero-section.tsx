@@ -1,6 +1,18 @@
-import { Rocket, MessageCircle, Check, Shield, Heart, Star, Zap, ArrowRight, Sparkles, Award, Users, Clock, Video, Smartphone, Bot } from "lucide-react";
+import { useState } from "react";
+import { Rocket, MessageCircle, Check, Shield, Heart, Star, Zap, ArrowRight, Sparkles, Award, Users, Clock, Video, Smartphone, Bot, Calendar, HelpCircle } from "lucide-react";
+import InteractiveChat from "./interactive-chat";
+import AppointmentBooking from "./appointment-booking";
+import TrialSignupFlow from "./trial-signup-flow";
+import QuickActionsDock from "./quick-actions-dock";
+import ContextualGuidance from "./contextual-guidance";
+import TaskFlowWizard from "./task-flow-wizard";
 
 export default function PetHeroSection() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isTrialSignupOpen, setIsTrialSignupOpen] = useState(false);
+  const [isTaskWizardOpen, setIsTaskWizardOpen] = useState(false);
+
   return (
     <section 
       className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-blue-50/30"
@@ -107,6 +119,7 @@ export default function PetHeroSection() {
             <div className="space-y-8">
               <div className="hero-button-group">
                 <button 
+                  onClick={() => setIsTrialSignupOpen(true)}
                   data-testid="button-start-free-trial"
                   className="btn-genz-primary group focus-ring"
                   type="button"
@@ -117,13 +130,37 @@ export default function PetHeroSection() {
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-all duration-300" aria-hidden="true" />
                 </button>
                 <button 
-                  data-testid="button-chat-dr-paw"
+                  onClick={() => setIsBookingOpen(true)}
+                  data-testid="button-book-appointment"
                   className="btn-genz-secondary group focus-ring"
+                  type="button"
+                  aria-describedby="book-appointment-description"
+                >
+                  <Calendar className="w-6 h-6 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
+                  <span>Book Appointment</span>
+                </button>
+              </div>
+              
+              <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                <button 
+                  onClick={() => setIsChatOpen(true)}
+                  data-testid="button-chat-dr-paw"
+                  className="btn-genz-tertiary group focus-ring"
                   type="button"
                   aria-label="Start a chat conversation with Dr. Paw AI assistant"
                 >
-                  <Bot className="w-6 h-6 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
+                  <Bot className="w-5 h-5 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
                   <span>Chat with Dr. Paw AI</span>
+                </button>
+                <button 
+                  onClick={() => setIsTaskWizardOpen(true)}
+                  data-testid="button-task-wizard"
+                  className="btn-genz-tertiary group focus-ring"
+                  type="button"
+                  aria-label="Get guided help for common tasks"
+                >
+                  <HelpCircle className="w-5 h-5 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
+                  <span>Need Help?</span>
                 </button>
               </div>
               
@@ -243,6 +280,36 @@ export default function PetHeroSection() {
 
       {/* Main content landmark for skip link */}
       <div id="main-content" className="sr-only">Main content starts after hero section</div>
+
+      <InteractiveChat 
+        isOpen={isChatOpen} 
+        onClose={() => setIsChatOpen(false)} 
+      />
+      <AppointmentBooking 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
+      <TrialSignupFlow 
+        isOpen={isTrialSignupOpen} 
+        onClose={() => setIsTrialSignupOpen(false)} 
+      />
+      <TaskFlowWizard 
+        isOpen={isTaskWizardOpen} 
+        onClose={() => setIsTaskWizardOpen(false)}
+        onOpenChat={() => setIsChatOpen(true)}
+        onOpenBooking={() => setIsBookingOpen(true)}
+        onOpenTrial={() => setIsTrialSignupOpen(true)}
+      />
+      <QuickActionsDock 
+        onOpenChat={() => setIsChatOpen(true)}
+        onOpenBooking={() => setIsBookingOpen(true)}
+        onOpenTrial={() => setIsTrialSignupOpen(true)}
+      />
+      <ContextualGuidance 
+        onOpenChat={() => setIsChatOpen(true)}
+        onOpenBooking={() => setIsBookingOpen(true)}
+        onOpenTrial={() => setIsTrialSignupOpen(true)}
+      />
     </section>
   );
 }

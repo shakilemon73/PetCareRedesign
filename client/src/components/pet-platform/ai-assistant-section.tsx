@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Brain, Heart, Zap, CheckCircle2, Clock, Shield, Sparkles, ArrowRight, Play, MessageCircle, Activity, Award } from "lucide-react";
+import InteractiveChat from "./interactive-chat";
 
 export default function PetAiAssistantSection() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   const features = [
     {
       icon: Brain,
@@ -88,6 +92,7 @@ export default function PetAiAssistantSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
+                onClick={() => setIsChatOpen(true)}
                 data-testid="button-try-dr-paw"
                 className="btn-primary group text-lg px-10 py-5 hover-glow shadow-strong will-change-transform"
               >
@@ -199,6 +204,11 @@ export default function PetAiAssistantSection() {
           </div>
         </div>
       </div>
+
+      <InteractiveChat 
+        isOpen={isChatOpen} 
+        onClose={() => setIsChatOpen(false)} 
+      />
     </section>
   );
 }

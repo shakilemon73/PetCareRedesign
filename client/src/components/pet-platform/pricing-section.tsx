@@ -1,6 +1,71 @@
-import { Calculator, Search, Heart, TrendingDown, DollarSign, Sparkles, ArrowRight, Zap } from "lucide-react";
+import { useState } from "react";
+import { Calculator, Search, Heart, TrendingDown, DollarSign, Sparkles, ArrowRight, Zap, Check, Star, Crown, Shield, Zap as Lightning, Clock, Users, Calendar } from "lucide-react";
 
 export default function PetPricingSection() {
+  const [selectedPlan, setSelectedPlan] = useState("premium");
+  const [isAnnual, setIsAnnual] = useState(true);
+
+  const plans = [
+    {
+      id: "basic",
+      name: "Basic Care",
+      icon: Heart,
+      color: "blue",
+      popular: false,
+      monthlyPrice: 29,
+      annualPrice: 290,
+      savings: "up to 50%",
+      description: "Essential pet care for families on a budget",
+      features: [
+        "AI health monitoring",
+        "Basic appointment booking",
+        "Email support",
+        "Monthly health reports",
+        "Access to 500+ clinics"
+      ]
+    },
+    {
+      id: "premium",
+      name: "Premium Care",
+      icon: Star,
+      color: "purple",
+      popular: true,
+      monthlyPrice: 59,
+      annualPrice: 590,
+      savings: "up to 70%",
+      description: "Comprehensive care with priority features",
+      features: [
+        "Everything in Basic",
+        "24/7 Dr. Paw AI assistance",
+        "Priority booking",
+        "Emergency support",
+        "Family member access",
+        "Medication reminders",
+        "Custom health insights"
+      ]
+    },
+    {
+      id: "enterprise",
+      name: "Family Plan",
+      icon: Crown,
+      color: "gold",
+      popular: false,
+      monthlyPrice: 99,
+      annualPrice: 990,
+      savings: "up to 80%",
+      description: "Complete care for multiple pets & family",
+      features: [
+        "Everything in Premium",
+        "Unlimited pets",
+        "Concierge support",
+        "Advanced analytics",
+        "Custom care plans",
+        "Specialist referrals",
+        "Wellness programs"
+      ]
+    }
+  ];
+
   const savings = [
     {
       id: "dental",

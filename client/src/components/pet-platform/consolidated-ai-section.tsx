@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { 
   Video, Brain, Phone, MessageSquare, Camera, Scan, Eye, Ear, 
   Heart, Zap, CheckCircle2, Sparkles, ArrowRight, Play, Shield,
   Clock, Award, FileText, Users, Stethoscope, Activity, Bot,
   Building2, Database, Mail, Calendar, CreditCard
 } from "lucide-react";
+import InteractiveChat from "./interactive-chat";
 
 export default function ConsolidatedAiSection() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   const aiFeatures = [
     {
       icon: Video,
@@ -197,9 +201,14 @@ export default function ConsolidatedAiSection() {
                   </div>
 
                   {/* CTA Button */}
-                  <button className={`w-full bg-gradient-to-r ${ai.bgGradient} text-white px-6 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group/btn`}>
+                  <button 
+                    onClick={() => ai.title === 'Dr. Paw AI' ? setIsChatOpen(true) : undefined}
+                    className={`w-full bg-gradient-to-r ${ai.bgGradient} text-white px-6 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group/btn ${ai.title !== 'Dr. Paw AI' ? 'cursor-not-allowed opacity-75' : ''}`}
+                    data-testid={`button-${ai.title.toLowerCase().replace(' ', '-')}`}
+                  >
                     <ai.ctaIcon className="w-5 h-5 inline mr-2 group-hover/btn:scale-110 transition-transform duration-300" aria-hidden="true" />
                     {ai.buttonText}
+                    {ai.title !== 'Dr. Paw AI' && <span className="text-xs block mt-1">(Coming Soon)</span>}
                     <ArrowRight className="w-5 h-5 inline ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" aria-hidden="true" />
                   </button>
                 </div>
@@ -253,7 +262,11 @@ export default function ConsolidatedAiSection() {
             {/* Call to Action */}
             <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group">
+                <button 
+                  onClick={() => setIsChatOpen(true)}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
+                  data-testid="button-activate-ai"
+                >
                   <Bot className="w-6 h-6 inline mr-3 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                   Activate AI Assistants
                   <ArrowRight className="w-6 h-6 inline ml-3 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
@@ -301,6 +314,11 @@ export default function ConsolidatedAiSection() {
           </div>
         </div>
       </div>
+
+      <InteractiveChat 
+        isOpen={isChatOpen} 
+        onClose={() => setIsChatOpen(false)} 
+      />
     </section>
   );
 }

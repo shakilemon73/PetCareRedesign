@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertWaitlistSchema, insertChatSessionSchema } from "@shared/schema";
+import { insertWaitlistSchema, insertChatSessionSchema, insertAppointmentSchema } from "@shared/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -55,6 +55,74 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       res.status(500).json({ 
         error: error instanceof Error ? error.message : "Failed to get session" 
+      });
+    }
+  });
+
+  // Appointment endpoints
+  app.post("/api/appointments", async (req, res) => {
+    try {
+      const validatedData = insertAppointmentSchema.parse(req.body);
+      const appointment = await storage.createAppointment(validatedData);
+      res.json({ success: true, appointment });
+    } catch (error) {
+      res.status(400).json({ 
+        success: false, 
+        error: error instanceof Error ? error.message : "Invalid appointment data" 
+      });
+    }
+  });
+
+  app.get("/api/appointments", async (req, res) => {
+    try {
+      const appointments = await storage.getAppointments();
+      res.json(appointments);
+    } catch (error) {
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : "Failed to get appointments" 
+      });
+    }
+  });
+
+  app.get("/api/appointments/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const appointment = await storage.getAppointment(id);
+      if (!appointment) {
+        return res.status(404).json({ error: "Appointment not found" });
+      }
+      res.json(appointment);
+    } catch (error) {
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : "Failed to get appointment" 
+      });
+    }
+  });
+
+  app.get("/api/appointments/slots/:date", async (req, res) => {
+    try {
+      const { date } = req.params;
+      const slots = await storage.getAvailableTimeSlots(date);
+      res.json({ availableSlots: slots });
+    } catch (error) {
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : "Failed to get available slots" 
+      });
+    }
+  });
+
+  app.patch("/api/appointments/:id/status", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { status } = req.body;
+      const appointment = await storage.updateAppointmentStatus(id, status);
+      if (!appointment) {
+        return res.status(404).json({ error: "Appointment not found" });
+      }
+      res.json({ success: true, appointment });
+    } catch (error) {
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : "Failed to update appointment" 
       });
     }
   });

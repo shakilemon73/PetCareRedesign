@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, boolean, time } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -29,6 +29,23 @@ export const aiChatSessions = pgTable("ai_chat_sessions", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const appointments = pgTable("appointments", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  petName: text("pet_name").notNull(),
+  petAge: text("pet_age"),
+  petBreed: text("pet_breed"),
+  ownerName: text("owner_name").notNull(),
+  ownerEmail: text("owner_email").notNull(),
+  ownerPhone: text("owner_phone"),
+  appointmentDate: timestamp("appointment_date").notNull(),
+  appointmentType: text("appointment_type").notNull(), // 'wellness', 'urgent', 'follow-up', 'emergency'
+  symptoms: text("symptoms"),
+  notes: text("notes"),
+  status: text("status").notNull().default("scheduled"), // 'scheduled', 'confirmed', 'completed', 'cancelled'
+  veterinarianId: varchar("veterinarian_id"), // Future use
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   email: true,
@@ -48,9 +65,24 @@ export const insertChatSessionSchema = createInsertSchema(aiChatSessions).pick({
   sessionData: true,
 });
 
+export const insertAppointmentSchema = createInsertSchema(appointments).pick({
+  petName: true,
+  petAge: true,
+  petBreed: true,
+  ownerName: true,
+  ownerEmail: true,
+  ownerPhone: true,
+  appointmentDate: true,
+  appointmentType: true,
+  symptoms: true,
+  notes: true,
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertWaitlistEntry = z.infer<typeof insertWaitlistSchema>;
 export type WaitlistEntry = typeof waitlistEntries.$inferSelect;
 export type InsertChatSession = z.infer<typeof insertChatSessionSchema>;
 export type AiChatSession = typeof aiChatSessions.$inferSelect;
+export type InsertAppointment = z.infer<typeof insertAppointmentSchema>;
+export type Appointment = typeof appointments.$inferSelect;
