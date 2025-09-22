@@ -1,3 +1,4 @@
+import { useLocation, useRoute } from 'wouter';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -26,8 +27,12 @@ const mockExecutionData = {
 };
 
 export default function ExecutionDetails() {
+  const [, setLocation] = useLocation();
+  const [match, params] = useRoute('/execution/:id');
+  const executionId = params?.id || 'exec-001';
+  
   const handleBack = () => {
-    window.history.back();
+    setLocation('/history');
   };
 
   const handleDownloadReport = () => {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import MobileHeader from '@/components/MobileHeader';
 import QubiDevice from '@/components/QubiDevice';
 import QuantumExecutionCard from '@/components/QuantumExecutionCard';
@@ -24,13 +25,14 @@ const mockDevices = [
 
 export default function Dashboard() {
   const [devices] = useState(mockDevices);
+  const [, setLocation] = useLocation();
 
   const handleAddDevice = () => {
-    window.location.href = '/scan';
+    setLocation('/scan');
   };
 
   const handleSettings = () => {
-    window.location.href = '/settings';
+    setLocation('/settings');
   };
 
   return (

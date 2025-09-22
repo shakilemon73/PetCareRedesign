@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import MobileHeader from '@/components/MobileHeader';
 import ThemeCard from '@/components/ThemeCard';
 
@@ -49,9 +50,10 @@ const mockThemes = [
 export default function Themes() {
   const [themes, setThemes] = useState(mockThemes);
   const [activeThemeId, setActiveThemeId] = useState('quantum-glow');
+  const [, setLocation] = useLocation();
 
   const handleBack = () => {
-    window.location.href = '/profile';
+    setLocation('/profile');
   };
 
   const handleApplyTheme = (themeId: string) => {

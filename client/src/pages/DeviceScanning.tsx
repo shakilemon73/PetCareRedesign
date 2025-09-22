@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import MobileHeader from '@/components/MobileHeader';
 import DeviceScanCard from '@/components/DeviceScanCard';
 import { Button } from '@/components/ui/button';
@@ -34,9 +35,10 @@ const mockNearbyDevices = [
 export default function DeviceScanning() {
   const [nearbyDevices, setNearbyDevices] = useState(mockNearbyDevices);
   const [isScanning, setIsScanning] = useState(false);
+  const [, setLocation] = useLocation();
 
   const handleBack = () => {
-    window.location.href = '/';
+    setLocation('/');
   };
 
   const handleScanAgain = async () => {

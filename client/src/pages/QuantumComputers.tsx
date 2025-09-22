@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -58,9 +59,10 @@ const statusColors = {
 export default function QuantumComputers() {
   const [computers, setComputers] = useState(mockQuantumComputers);
   const [selectedComputer, setSelectedComputer] = useState('ibm-hanoi');
+  const [, setLocation] = useLocation();
 
   const handleBack = () => {
-    window.history.back();
+    setLocation('/');
   };
 
   const handleSelectComputer = (computerId: string) => {
@@ -74,7 +76,7 @@ export default function QuantumComputers() {
   const handleStartExecution = () => {
     console.log(`Start execution on ${selectedComputer}`);
     // Navigate back to dashboard with selected computer
-    window.history.back();
+    setLocation('/');
   };
 
   return (
@@ -102,6 +104,7 @@ export default function QuantumComputers() {
                   : 'hover-elevate'
               }`}
               onClick={() => computer.status === 'online' && handleSelectComputer(computer.id)}
+              data-testid={`card-computer-${computer.id}`}
             >
               <CardHeader>
                 <div className="flex items-center justify-between">

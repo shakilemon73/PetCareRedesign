@@ -1,3 +1,4 @@
+import { useLocation } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -55,12 +56,14 @@ const statusColors = {
 };
 
 export default function History() {
+  const [, setLocation] = useLocation();
+  
   const handleBack = () => {
-    window.history.back();
+    setLocation('/');
   };
 
   const handleViewExecution = (executionId: string) => {
-    window.location.href = `/execution/${executionId}`;
+    setLocation(`/execution/${executionId}`);
   };
 
   return (
@@ -84,6 +87,7 @@ export default function History() {
               key={execution.id} 
               className="hover-elevate cursor-pointer"
               onClick={() => handleViewExecution(execution.id)}
+              data-testid={`card-execution-${execution.id}`}
             >
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-3">

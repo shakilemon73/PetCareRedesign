@@ -1,3 +1,4 @@
+import { useLocation } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -19,11 +20,17 @@ export default function QuantumExecutionCard({
   quantumComputer = "IBM Hanoi",
   qubits = 32,
   hasPendingCircuit = true,
-  onReadReport = () => window.location.href = '/execution/exec-001',
-  onSkipToStory = () => window.location.href = '/execution/exec-001',
-  onViewHistory = () => window.location.href = '/history',
-  onNextShake = () => window.location.href = '/quantum-computers'
+  onReadReport,
+  onSkipToStory,
+  onViewHistory,
+  onNextShake
 }: QuantumExecutionCardProps) {
+  const [, setLocation] = useLocation();
+  
+  const handleReadReport = onReadReport || (() => setLocation('/execution/exec-001'));
+  const handleSkipToStory = onSkipToStory || (() => setLocation('/execution/exec-001'));
+  const handleViewHistory = onViewHistory || (() => setLocation('/history'));
+  const handleNextShake = onNextShake || (() => setLocation('/quantum-computers'));
   return (
     <div className="space-y-4">
       {/* Last Execution */}
@@ -38,7 +45,7 @@ export default function QuantumExecutionCard({
             <Button 
               variant="outline" 
               className="justify-between h-12"
-              onClick={onReadReport}
+              onClick={handleReadReport}
               data-testid="button-read-report"
             >
               <span>Read the report</span>
@@ -48,7 +55,7 @@ export default function QuantumExecutionCard({
             <Button 
               variant="outline" 
               className="justify-between h-12"
-              onClick={onSkipToStory}
+              onClick={handleSkipToStory}
               data-testid="button-skip-story"
             >
               <span>Skip to the story</span>
@@ -71,7 +78,7 @@ export default function QuantumExecutionCard({
               <Button 
                 variant="ghost" 
                 size="icon" 
-                onClick={onViewHistory}
+                onClick={handleViewHistory}
                 data-testid="button-view-history"
               >
                 <History className="h-5 w-5" />
@@ -91,7 +98,7 @@ export default function QuantumExecutionCard({
             
             <Button 
               className="w-full bg-gradient-to-r from-electric-indigo to-quantum-pink hover:opacity-90"
-              onClick={onNextShake}
+              onClick={handleNextShake}
               data-testid="button-next-shake"
             >
               <Play className="h-4 w-4 mr-2" />

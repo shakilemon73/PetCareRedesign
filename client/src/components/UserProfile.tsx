@@ -1,3 +1,4 @@
+import { useLocation } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -57,14 +58,19 @@ export default function UserProfile({
   themesUnlocked,
   totalThemes,
   themePreviewColors = ['#6931F4', '#1B9CFC', '#2ADBB9', '#F3CF25'],
-  onThemeCollection = () => window.location.href = '/themes',
-  onMenuItemClick = (itemId) => {
+  onThemeCollection,
+  onMenuItemClick
+}: UserProfileProps) {
+  const [, setLocation] = useLocation();
+  
+  const handleThemeCollection = onThemeCollection || (() => setLocation('/themes'));
+  const handleMenuItemClick = onMenuItemClick || ((itemId) => {
     switch(itemId) {
       case 'execution-history':
-        window.location.href = '/history';
+        setLocation('/history');
         break;
       case 'settings':
-        window.location.href = '/settings';
+        setLocation('/settings');
         break;
       case 'about':
         console.log('Navigate to Qolour website');
@@ -73,8 +79,7 @@ export default function UserProfile({
         console.log('Navigate to Qolour learning resources');
         break;
     }
-  }
-}: UserProfileProps) {
+  });
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();
   };
