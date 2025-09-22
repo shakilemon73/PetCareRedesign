@@ -36,7 +36,7 @@ export default function DeviceScanning() {
   const [isScanning, setIsScanning] = useState(false);
 
   const handleBack = () => {
-    console.log('Navigate back to dashboard');
+    window.location.href = '/';
   };
 
   const handleScanAgain = async () => {

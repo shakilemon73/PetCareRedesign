@@ -26,11 +26,11 @@ export default function Dashboard() {
   const [devices] = useState(mockDevices);
 
   const handleAddDevice = () => {
-    console.log('Navigate to add device page');
+    window.location.href = '/scan';
   };
 
   const handleSettings = () => {
-    console.log('Navigate to settings page');
+    window.location.href = '/settings';
   };
 
   return (

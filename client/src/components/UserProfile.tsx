@@ -57,8 +57,23 @@ export default function UserProfile({
   themesUnlocked,
   totalThemes,
   themePreviewColors = ['#6931F4', '#1B9CFC', '#2ADBB9', '#F3CF25'],
-  onThemeCollection = () => console.log('Theme collection clicked'),
-  onMenuItemClick = (itemId) => console.log(`Menu item ${itemId} clicked`)
+  onThemeCollection = () => window.location.href = '/themes',
+  onMenuItemClick = (itemId) => {
+    switch(itemId) {
+      case 'execution-history':
+        window.location.href = '/history';
+        break;
+      case 'settings':
+        window.location.href = '/settings';
+        break;
+      case 'about':
+        console.log('Navigate to Qolour website');
+        break;
+      case 'learn-more':
+        console.log('Navigate to Qolour learning resources');
+        break;
+    }
+  }
 }: UserProfileProps) {
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();

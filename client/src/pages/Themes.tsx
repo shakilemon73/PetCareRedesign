@@ -51,7 +51,7 @@ export default function Themes() {
   const [activeThemeId, setActiveThemeId] = useState('quantum-glow');
 
   const handleBack = () => {
-    console.log('Navigate back to profile');
+    window.location.href = '/profile';
   };
 
   const handleApplyTheme = (themeId: string) => {

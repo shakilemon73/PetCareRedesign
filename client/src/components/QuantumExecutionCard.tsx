@@ -19,10 +19,10 @@ export default function QuantumExecutionCard({
   quantumComputer = "IBM Hanoi",
   qubits = 32,
   hasPendingCircuit = true,
-  onReadReport = () => console.log('Read report clicked'),
-  onSkipToStory = () => console.log('Skip to story clicked'),
-  onViewHistory = () => console.log('View history clicked'),
-  onNextShake = () => console.log('Next shake clicked')
+  onReadReport = () => window.location.href = '/execution/exec-001',
+  onSkipToStory = () => window.location.href = '/execution/exec-001',
+  onViewHistory = () => window.location.href = '/history',
+  onNextShake = () => window.location.href = '/quantum-computers'
 }: QuantumExecutionCardProps) {
   return (
     <div className="space-y-4">

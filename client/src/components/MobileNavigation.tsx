@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Circle, Book, User, Settings, Palette } from 'lucide-react';
+import { useLocation } from 'wouter';
+import { Circle, Book, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface NavigationTab {
@@ -22,12 +22,12 @@ const navigationTabs: NavigationTab[] = [
 
 export default function MobileNavigation({ 
   currentTab = 'qubis',
-  onTabChange = (tabId) => console.log(`Navigate to ${tabId}`)
+  onTabChange = () => {}
 }: MobileNavigationProps) {
-  const [activeTab, setActiveTab] = useState(currentTab);
+  const [, setLocation] = useLocation();
 
-  const handleTabClick = (tabId: string) => {
-    setActiveTab(tabId);
+  const handleTabClick = (tabId: string, path: string) => {
+    setLocation(path);
     onTabChange(tabId);
   };
 
@@ -39,11 +39,11 @@ export default function MobileNavigation({
             key={tab.id}
             variant="ghost"
             className={`flex flex-col items-center space-y-1 h-14 px-3 ${
-              activeTab === tab.id 
+              currentTab === tab.id 
                 ? 'text-electric-indigo bg-electric-indigo/10' 
                 : 'text-muted-foreground hover-elevate'
             }`}
-            onClick={() => handleTabClick(tab.id)}
+            onClick={() => handleTabClick(tab.id, tab.path)}
             data-testid={`button-nav-${tab.id}`}
           >
             {tab.icon}
