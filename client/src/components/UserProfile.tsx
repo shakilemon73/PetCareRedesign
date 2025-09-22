@@ -149,7 +149,7 @@ export default function UserProfile({
           <Card 
             key={item.id} 
             className="hover-elevate cursor-pointer"
-            onClick={() => onMenuItemClick(item.id)}
+            onClick={() => handleMenuItemClick(item.id)}
           >
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
