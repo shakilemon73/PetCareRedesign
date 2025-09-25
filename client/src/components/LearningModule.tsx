@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -39,9 +40,12 @@ export default function LearningModule({
   onStart = (moduleId) => console.log(`Start module ${moduleId}`)
 }: LearningModuleProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [, setLocation] = useLocation();
 
   const handleStart = () => {
     if (!isLocked) {
+      // Navigate to the chapter page with the module ID
+      setLocation(`/learn/${id}`);
       onStart(id);
     }
   };

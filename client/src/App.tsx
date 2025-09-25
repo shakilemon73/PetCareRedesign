@@ -10,6 +10,7 @@ import MobileNavigation from "@/components/MobileNavigation";
 import Dashboard from "@/pages/Dashboard";
 import DeviceScanning from "@/pages/DeviceScanning";
 import Learning from "@/pages/Learning";
+import LearnChapter from "@/pages/LearnChapter";
 import Profile from "@/pages/Profile";
 import Themes from "@/pages/Themes";
 import Settings from "@/pages/Settings";
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/" component={Dashboard} />
       <Route path="/scan" component={DeviceScanning} />
       <Route path="/learn" component={Learning} />
+      <Route path="/learn/:chapterId" component={LearnChapter} />
       <Route path="/profile" component={Profile} />
       <Route path="/themes" component={Themes} />
       <Route path="/settings" component={Settings} />
@@ -56,7 +58,8 @@ function AppContent() {
                          !location.includes('/execution') && 
                          !location.includes('/scan') &&
                          !location.includes('/themes') &&
-                         !location.includes('/quantum-computers');
+                         !location.includes('/quantum-computers') &&
+                         !location.includes('/learn/');
 
   return (
     <div className="min-h-screen bg-background relative">
