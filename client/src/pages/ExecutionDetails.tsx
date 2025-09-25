@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import MobileHeader from '@/components/MobileHeader';
 import { ExternalLink, ArrowRight } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 //todo: remove mock functionality - replace with real execution data
 const mockExecutionData = {
@@ -43,6 +44,13 @@ export default function ExecutionDetails() {
   const handleQuantumComputerLink = () => {
     window.open('https://quantum.cloud.ibm.com/computers?system=ibm_torino', '_blank');
   };
+
+  // Prepare chart data
+  const chartData = Object.entries(mockExecutionData.results).map(([state, count]) => ({
+    state: `|${state}⟩`,
+    count: count,
+    percentage: ((count / mockExecutionData.shots) * 100).toFixed(1)
+  }));
 
   return (
     <div className="min-h-screen bg-background">
@@ -159,11 +167,46 @@ export default function ExecutionDetails() {
                 <div className="text-3xl font-bold text-electric-indigo">{mockExecutionData.shots}</div>
               </div>
               
-              {/* Simple results visualization */}
-              <div className="bg-gradient-to-r from-electric-indigo/5 to-quantum-pink/5 rounded-lg p-6">
-                <div className="h-32 bg-gradient-to-t from-electric-indigo/20 to-quantum-pink/20 rounded-lg flex items-end justify-center">
-                  <div className="text-xs text-muted-foreground">Results visualization</div>
-                </div>
+              {/* Results Bar Chart */}
+              <div className="bg-gradient-to-r from-electric-indigo/5 to-quantum-pink/5 rounded-lg p-4">
+                <ResponsiveContainer width="100%" height={200}>
+                  <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <XAxis 
+                      dataKey="state" 
+                      tick={{ fontSize: 12 }}
+                      tickLine={false}
+                      axisLine={false}
+                    />
+                    <YAxis 
+                      tick={{ fontSize: 12 }}
+                      tickLine={false}
+                      axisLine={false}
+                    />
+                    <Bar 
+                      dataKey="count" 
+                      fill="url(#gradient)"
+                      radius={[4, 4, 0, 0]}
+                    />
+                    <defs>
+                      <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="hsl(var(--electric-indigo))" />
+                        <stop offset="50%" stopColor="hsl(var(--quantum-pink))" />
+                        <stop offset="100%" stopColor="hsl(var(--ion-green))" />
+                      </linearGradient>
+                    </defs>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              
+              {/* Results Summary */}
+              <div className="grid grid-cols-2 gap-3 mt-4">
+                {chartData.map((item, index) => (
+                  <div key={item.state} className="bg-muted/20 rounded-lg p-3 text-center">
+                    <div className="text-sm font-mono font-bold text-electric-indigo">{item.state}</div>
+                    <div className="text-lg font-bold">{item.count}</div>
+                    <div className="text-xs text-muted-foreground">{item.percentage}%</div>
+                  </div>
+                ))}
               </div>
             </div>
           </CardContent>
