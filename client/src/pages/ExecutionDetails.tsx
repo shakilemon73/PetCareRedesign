@@ -167,46 +167,24 @@ export default function ExecutionDetails() {
                 <div className="text-3xl font-bold text-electric-indigo">{mockExecutionData.shots}</div>
               </div>
               
-              {/* Results Bar Chart */}
-              <div className="bg-gradient-to-r from-electric-indigo/5 to-quantum-pink/5 rounded-lg p-4">
-                <ResponsiveContainer width="100%" height={200}>
-                  <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+              {/* Results Chart - Matching Webflow Design */}
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <ResponsiveContainer width="100%" height={160}>
+                  <BarChart data={chartData} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
                     <XAxis 
                       dataKey="state" 
-                      tick={{ fontSize: 12 }}
+                      tick={{ fontSize: 10, fill: '#666' }}
                       tickLine={false}
                       axisLine={false}
                     />
-                    <YAxis 
-                      tick={{ fontSize: 12 }}
-                      tickLine={false}
-                      axisLine={false}
-                    />
+                    <YAxis hide />
                     <Bar 
                       dataKey="count" 
-                      fill="url(#gradient)"
-                      radius={[4, 4, 0, 0]}
+                      fill="#4F46E5"
+                      radius={[2, 2, 0, 0]}
                     />
-                    <defs>
-                      <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="hsl(var(--electric-indigo))" />
-                        <stop offset="50%" stopColor="hsl(var(--quantum-pink))" />
-                        <stop offset="100%" stopColor="hsl(var(--ion-green))" />
-                      </linearGradient>
-                    </defs>
                   </BarChart>
                 </ResponsiveContainer>
-              </div>
-              
-              {/* Results Summary */}
-              <div className="grid grid-cols-2 gap-3 mt-4">
-                {chartData.map((item, index) => (
-                  <div key={item.state} className="bg-muted/20 rounded-lg p-3 text-center">
-                    <div className="text-sm font-mono font-bold text-electric-indigo">{item.state}</div>
-                    <div className="text-lg font-bold">{item.count}</div>
-                    <div className="text-xs text-muted-foreground">{item.percentage}%</div>
-                  </div>
-                ))}
               </div>
             </div>
           </CardContent>
