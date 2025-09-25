@@ -1,3 +1,4 @@
+import { useLocation } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -12,6 +13,7 @@ interface LessonItemProps {
   isLocked: boolean;
   isUnlock?: boolean; // For special unlock rewards
   level?: 'Beginner' | 'Intermediate' | 'Advanced';
+  chapterId?: string; // Chapter ID for navigation
   onClick?: (lessonId: string) => void;
 }
 
@@ -29,10 +31,17 @@ export default function LessonItem({
   isLocked,
   isUnlock = false,
   level,
+  chapterId,
   onClick = (lessonId) => console.log(`Open lesson ${lessonId}`)
 }: LessonItemProps) {
+  const [, setLocation] = useLocation();
+
   const handleClick = () => {
     if (!isLocked) {
+      // If chapterId is provided, navigate to the lesson page
+      if (chapterId) {
+        setLocation(`/learn/${chapterId}/${id}`);
+      }
       onClick(id);
     }
   };

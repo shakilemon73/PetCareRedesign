@@ -206,6 +206,7 @@ export default function LearnChapter() {
               isLocked={lesson.isLocked}
               isUnlock={lesson.isUnlock}
               level={lesson.level}
+              chapterId={chapterId}
               onClick={handleLessonClick}
             />
           ))}

@@ -11,6 +11,7 @@ import Dashboard from "@/pages/Dashboard";
 import DeviceScanning from "@/pages/DeviceScanning";
 import Learning from "@/pages/Learning";
 import LearnChapter from "@/pages/LearnChapter";
+import LearnLesson from "@/pages/LearnLesson";
 import Profile from "@/pages/Profile";
 import Themes from "@/pages/Themes";
 import Settings from "@/pages/Settings";
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/" component={Dashboard} />
       <Route path="/scan" component={DeviceScanning} />
       <Route path="/learn" component={Learning} />
+      <Route path="/learn/:chapterId/:lessonId" component={LearnLesson} />
       <Route path="/learn/:chapterId" component={LearnChapter} />
       <Route path="/profile" component={Profile} />
       <Route path="/themes" component={Themes} />
