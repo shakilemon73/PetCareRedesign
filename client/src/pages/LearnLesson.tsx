@@ -69,7 +69,7 @@ export default function LearnLesson() {
   useEffect(() => {
     // Calculate lesson progress based on interactions
     if (selectedOption) {
-      setLessonProgress(75);
+      setLessonProgress(100);
     }
   }, [selectedOption]);
 
@@ -202,6 +202,7 @@ export default function LearnLesson() {
                 size="sm"
                 onClick={handleBack}
                 className="h-9 w-9 p-0"
+                aria-label="Back to chapter"
                 data-testid="button-back-chapter"
               >
                 <ArrowLeft className="h-4 w-4" />
@@ -219,7 +220,10 @@ export default function LearnLesson() {
             </div>
             
             {lessonProgress > 0 && (
-              <Badge className="bg-green-100 text-green-800 border-green-200 dark:bg-green-900 dark:text-green-100 dark:border-green-700">
+              <Badge 
+                className="bg-green-100 text-green-800 border-green-200 dark:bg-green-900 dark:text-green-100 dark:border-green-700"
+                data-testid="badge-lesson-progress"
+              >
                 {lessonProgress}% Complete
               </Badge>
             )}
@@ -246,7 +250,7 @@ export default function LearnLesson() {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main className="max-w-4xl mx-auto px-4 py-12 pb-32">
         <div className="space-y-12">
           {lesson.content.map((content, index) => (
             <section key={index} className="scroll-mt-20">
@@ -257,7 +261,11 @@ export default function LearnLesson() {
 
         {/* Progress Achievement Section */}
         {selectedOption && (
-          <section className="mt-16 p-8 bg-gradient-to-br from-green-50 via-emerald-50 to-green-50 dark:from-green-950/30 dark:via-emerald-950/30 dark:to-green-950/30 rounded-3xl border border-green-200 dark:border-green-800/50 shadow-lg">
+          <section 
+            className="mt-16 p-8 bg-gradient-to-br from-green-50 via-emerald-50 to-green-50 dark:from-green-950/30 dark:via-emerald-950/30 dark:to-green-950/30 rounded-3xl border border-green-200 dark:border-green-800/50 shadow-lg"
+            data-testid="section-achievement"
+            aria-live="polite"
+          >
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/50 rounded-2xl mb-6">
                 <Award className="h-8 w-8 text-green-600 dark:text-green-400" />
@@ -273,7 +281,14 @@ export default function LearnLesson() {
                   <span>Lesson Progress</span>
                   <span className="font-semibold">{lessonProgress}%</span>
                 </div>
-                <Progress value={lessonProgress} className="h-3 bg-green-200 dark:bg-green-900" />
+                <Progress 
+                  value={lessonProgress} 
+                  className="h-3 bg-green-200 dark:bg-green-900"
+                  aria-valuenow={lessonProgress}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label="Lesson completion progress"
+                />
               </div>
             </div>
           </section>
@@ -289,8 +304,11 @@ export default function LearnLesson() {
               <div className="w-3 h-3 rounded-full bg-primary shadow-sm"></div>
               <span className="text-sm text-primary font-medium">Current Lesson</span>
             </div>
-            <div className="flex-1 max-w-32 h-2 bg-muted rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all duration-500" style={{ width: '60%' }}></div>
+            <div className="flex-1 max-w-32 h-2 bg-muted rounded-full overflow-hidden" data-testid="progress-footer">
+              <div 
+                className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all duration-500" 
+                style={{ width: `${Math.max(10, lessonProgress)}%` }}
+              ></div>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 rounded-full bg-muted"></div>
