@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Lock, MoreHorizontal, ChevronRight } from 'lucide-react';
+import { Lock, MoreVertical, ChevronRight } from 'lucide-react';
 
 interface LearningModuleProps {
   id: string;
@@ -72,9 +72,9 @@ export default function LearningModule({
               {!isLocked && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">{progress}% progress</span>
+                    <span className="font-medium text-foreground">{progress}% progress</span>
                     <span className="text-muted-foreground">
-                      {skinsUnlocked} of {totalSkins} skins unlocked
+                      {skinsUnlocked} out of {totalSkins} skins unlocked
                     </span>
                   </div>
                   <Progress value={progress} className="h-2" />
@@ -89,7 +89,7 @@ export default function LearningModule({
                 className="h-8 w-8"
                 data-testid={`button-module-more-${id}`}
               >
-                <MoreHorizontal className="h-4 w-4" />
+                <MoreVertical className="h-4 w-4" />
               </Button>
             </div>
           </div>
